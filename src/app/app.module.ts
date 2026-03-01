@@ -8,14 +8,20 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { LoginComponent } from './components/login/login.component';
+import { CommonModule } from '@angular/common';
+import { ModulesModule } from './core/features/modules/modules.module';
+import { ForgotPasswordComponent } from './core/features/auth/forgot-password/forgot-password.component';
+
+
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent,LoginComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule , HttpClientModule, TranslateModule.forRoot({
+  declarations: [AppComponent,],
+  imports: [ ModulesModule,
+  CommonModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule , HttpClientModule, TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
@@ -26,3 +32,4 @@ export function HttpLoaderFactory(http: HttpClient) {
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+   
