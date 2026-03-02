@@ -1,79 +1,100 @@
 <ion-content class="login-content" [fullscreen]="true">
   <div class="login-container">
+
     <!-- Language Toggle -->
     <div class="lang-toggle">
-      <ion-button fill="clear" size="small">
-       <ion-icon 
-  [icon]="languageOutline"
-  style="font-size:4.5vw; color: #eaecf0;margin-inline-start: 3vw;">
-</ion-icon>
+      <ion-button fill="clear">
+        <img src="assets/icon/lan.png" style="height: 5vh;" />
         AR
       </ion-button>
     </div>
 
-   
+    <!-- Header -->
     <div class="login-header">
       <div class="logo-wrapper">
         <div class="logo-circle">
-          <ion-icon 
-  [icon]="schoolOutline"
-  slot="start"
-  style="font-size: 10vw; color: #eaecf0;">
-</ion-icon>
+          <img src="assets/icon/login.png" alt="lock" />
         </div>
       </div>
       <h1 class="app-title">aseelzddddd</h1>
       <p class="app-subtitle">hadeel</p>
     </div>
 
-    <form  class="login-form">
-   
+    <!-- Form -->
+    <form
+      class="login-form"
+      [formGroup]="loginForm"
+      (ngSubmit)="submit()">
+
+      <!-- Username -->
       <div class="form-group">
         <ion-item lines="none" class="input-item">
-          <ion-icon [icon]="personOutline" slot="start"  style="font-size: 4.5vw; color: #8a97a3;"></ion-icon>
+          <img src="assets/icon/user.PNG" style="height: 2vh; margin-inline-end: 2%;" />
           <ion-input
             type="text"
+            formControlName="username"
             placeholder="Enter your username">
           </ion-input>
         </ion-item>
       </div>
+
+      <!-- Password -->
       <div class="form-group">
-        <ion-item lines="none" class="input-item" >
-          <ion-icon [icon]="lockClosedOutline" slot="start"  style="font-size: 4.5vw; color:  #8a97a3;"></ion-icon>
+        <ion-item lines="none" class="input-item">
+          <img src="assets/icon/passwordd.PNG" style="height:2vh; margin-inline-end: 2%;" />
           <ion-input
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
             placeholder="Enter your password">
           </ion-input>
-          <ion-button fill="clear" slot="end"  class="toggle-password">
-            <ion-icon name= 'eye-off-outline' color="medium"></ion-icon>
+          <ion-button
+            fill="clear"
+            slot="end"
+            class="toggle-password"
+            type="button"
+            (click)="showPassword = !showPassword">
+            <ion-icon
+              [name]="showPassword ? 'eye-outline' : 'eye-off-outline'">
+            </ion-icon>
           </ion-button>
         </ion-item>
       </div>
+
+      <!-- School Code -->
       <div class="form-group">
         <ion-item lines="none" class="input-item">
-          <ion-icon [icon]="businessOutline" slot="start"  style="font-size: 4.5vw; color:  #8a97a3;"></ion-icon>
+          <img src="assets/icon/schoolll.PNG" style="height: 2vh; margin-inline-end: 2%;" />
           <ion-input
-           type="text"
-           placeholder="Enter school code (Optional)">
+            type="text"
+            formControlName="schoolCode"
+            placeholder="Enter school code (Optional)">
           </ion-input>
         </ion-item>
       </div>
-      <div class="forgot-password">
-        <ion-button fill="clear" size="small" >
+
+      <!-- Forgot Password -->
+      <div class="forgot-password" routerLink="/forgot-password">
+        <ion-button fill="clear" size="small" type="button">
           Forgot password?
         </ion-button>
       </div>
+
+      <!-- Login Button -->
       <ion-button
         type="submit"
         expand="block"
         shape="round"
         class="login-btn"
-       >
-    
+        [disabled]="loginForm.invalid">
         <span>Login</span>
       </ion-button>
+
     </form>
+
+    <!-- Footer -->
     <div class="login-footer">
       <p>© 2026 EduTrack 360. All rights reserved.</p>
     </div>
+
   </div>
 </ion-content>

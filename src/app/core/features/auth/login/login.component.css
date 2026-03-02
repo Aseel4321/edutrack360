@@ -1,25 +1,26 @@
-.login-content {
+.login-content {margin-top: 0%;
   --background: linear-gradient(180deg, #242c37 0%, #2a64b1 50%, #2f1c1c 100%);
 }
 
-.login-container {
+.login-container {margin-top: 0%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
+  text-align: start;
   min-height: 100%;
   padding: 2rem 1.5rem;
   max-width: 400px;
-  margin: 0 auto;
+  
 }
 
 .lang-toggle {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 0.5rem;
-
+height: 10vh;
   ion-button {
     --color: rgba(255, 255, 255, 0.7);
-    font-size: 13px;
+    font-size: 3vw;
   }
 }
 
@@ -34,8 +35,12 @@
   }
 
   .logo-circle {
-    width: 80px;
-    height: 80px;
+   width: 20vw;
+height: 20vw;
+max-width: 80px;
+max-height: 80px;
+min-width: 60px;
+min-height: 60px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     display: flex;
@@ -43,21 +48,18 @@
     justify-content: center;
     box-shadow: 0 8px 32px rgba(37, 99, 235, 0.3);
 
-    ion-icon {
-      font-size: 40px;
-      color: #fff;
-    }
+   
   }
 
   .app-title {
-    font-size: 26px;
+    font-size: 5vw;
     font-weight: 700;
     color: #fff;
-    margin: 0 0 4px;
+    margin: 0 0 3vw;
   }
 
   .app-subtitle {
-    font-size: 15px;
+    font-size: 3.5vw;
     color: rgba(255, 255, 255, 0.6);
     margin: 0;
   }
@@ -72,15 +74,15 @@
     --color: #000;
     --placeholder-color:   white;;
     
-    font-size: 15px;
+    font-size: 3vw;
   }
 
   .input-item {
     --background: rgba(255, 255, 255, 0.1);;
     --border-radius: 12px;
     --min-height: 52px;
-    --padding-start: 16px;
-    --inner-padding-end: 8px;
+    --padding-start: 3vw;
+    --inner-padding-end: 2vw;
     border: 1.5px solid #ccc;
     border-radius: 12px;
     transition: border-color 0.2s ease;

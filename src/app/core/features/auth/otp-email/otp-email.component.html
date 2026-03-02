@@ -1,0 +1,50 @@
+<ion-content class="otp-content" [fullscreen]="true">
+  <div class="otp-container">
+
+    <!-- Icon -->
+    <div class="icon-circle">
+     <img src="assets/icon/login.png" alt="lock" />
+    </div>
+
+    <!-- Title -->
+    <h2 class="title">OTP Verification</h2>
+    <p class="subtitle">
+      Enter the 4-digit code sent to your email address.
+    </p>
+
+    <!-- OTP Inputs -->
+    <form class="form">
+      <div class="otp-inputs">
+        <ion-input #input0 maxlength="1" type="tel" (ionInput)="onInputChange($event, 0)"></ion-input>
+        <ion-input #input1 maxlength="1" type="tel" (ionInput)="onInputChange($event, 1)"></ion-input>
+        <ion-input #input2 maxlength="1" type="tel" (ionInput)="onInputChange($event, 2)"></ion-input>
+        <ion-input #input3 maxlength="1" type="tel" (ionInput)="onInputChange($event, 3)"></ion-input>
+      </div>
+
+      <p class="resend">
+        Didn't receive? <a class="email-link">Send to Email</a>
+      </p>
+
+      <ion-button
+        type="submit"
+        expand="block"
+        shape="round"
+        class="submit-btn"
+        >
+        Verify
+      </ion-button>
+    </form>
+
+    <!-- Back Button -->
+    <ion-button fill="clear" class="back-btn">
+
+      Back
+    </ion-button>
+
+    <!-- Footer -->
+    <p class="footer">
+      © 2026 EduTrack 360. All rights reserved.
+    </p>
+
+  </div>
+</ion-content>
