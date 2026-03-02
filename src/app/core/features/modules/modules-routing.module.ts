@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from '../auth/login/login.component';
 import { ForgotPasswordComponent } from '../auth/forgot-password/forgot-password.component';
+import { SplashScreenComponent } from '../auth/splash-screen/splash-screen.component';
 
-const routes: Routes = [{path:'d',component:LoginComponent},{path:'',component:ForgotPasswordComponent}];
+const routes: Routes = [{path:'login',component:LoginComponent},{path:'forgot-password',component:ForgotPasswordComponent},{path:'',component:SplashScreenComponent}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

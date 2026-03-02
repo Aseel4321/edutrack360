@@ -5,10 +5,11 @@ import { ModulesRoutingModule } from './modules-routing.module';
 import { LoginComponent } from '../auth/login/login.component';
 import { IonicModule } from '@ionic/angular';
 import { ForgotPasswordComponent } from '../auth/forgot-password/forgot-password.component';
+import { SplashScreenComponent } from '../auth/splash-screen/splash-screen.component';
 
 
 @NgModule({
-  declarations: [LoginComponent,ForgotPasswordComponent],
+  declarations: [LoginComponent,ForgotPasswordComponent,SplashScreenComponent],
   imports: [IonicModule,
     CommonModule,
     ModulesRoutingModule

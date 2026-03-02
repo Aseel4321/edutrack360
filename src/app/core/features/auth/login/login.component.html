@@ -3,95 +3,77 @@
     <!-- Language Toggle -->
     <div class="lang-toggle">
       <ion-button fill="clear" size="small">
-        <ion-icon name="language-outline" slot="start"></ion-icon>
-   
+       <ion-icon 
+  [icon]="languageOutline"
+  style="font-size:4.5vw; color: #eaecf0;margin-inline-start: 3vw;">
+</ion-icon>
+        AR
       </ion-button>
     </div>
 
-    <!-- Logo & Branding -->
+   
     <div class="login-header">
       <div class="logo-wrapper">
         <div class="logo-circle">
-          <ion-icon name="school-outline"></ion-icon>
+          <ion-icon 
+  [icon]="schoolOutline"
+  slot="start"
+  style="font-size: 10vw; color: #eaecf0;">
+</ion-icon>
         </div>
       </div>
       <h1 class="app-title">aseelzddddd</h1>
       <p class="app-subtitle">hadeel</p>
     </div>
 
-    <!-- Login Form -->
-    <form   class="login-form">
-      <!-- Username/Email -->
+    <form  class="login-form">
+   
       <div class="form-group">
         <ion-item lines="none" class="input-item">
-          <ion-icon name="person-outline" slot="start" color="medium"></ion-icon>
+          <ion-icon [icon]="personOutline" slot="start"  style="font-size: 4.5vw; color: #8a97a3;"></ion-icon>
           <ion-input
-        
             type="text"
-            placeholder="ff"
-        >
+            placeholder="Enter your username">
           </ion-input>
         </ion-item>
-        <div class="error-text" >
-          error
-        </div>
       </div>
-
-      <!-- Password -->
       <div class="form-group">
-        <ion-item lines="none" class="input-item">
-          <ion-icon name="lock-closed-outline" slot="start" color="medium"></ion-icon>
+        <ion-item lines="none" class="input-item" >
+          <ion-icon [icon]="lockClosedOutline" slot="start"  style="font-size: 4.5vw; color:  #8a97a3;"></ion-icon>
           <ion-input
-      
-  
-            placeholder="fff"
-          >
+            placeholder="Enter your password">
           </ion-input>
           <ion-button fill="clear" slot="end"  class="toggle-password">
-            <ion-icon  color="medium"></ion-icon>
+            <ion-icon name= 'eye-off-outline' color="medium"></ion-icon>
           </ion-button>
         </ion-item>
-        <div class="error-text">
-          kk
-        </div>
       </div>
-
-      <!-- School Code (optional) -->
       <div class="form-group">
         <ion-item lines="none" class="input-item">
-          <ion-icon name="business-outline" slot="start" color="medium"></ion-icon>
+          <ion-icon [icon]="businessOutline" slot="start"  style="font-size: 4.5vw; color:  #8a97a3;"></ion-icon>
           <ion-input
-          
-            type="text"
-            placeholder="fff"
-            >
+           type="text"
+           placeholder="Enter school code (Optional)">
           </ion-input>
         </ion-item>
       </div>
-
-      <!-- Forgot Password -->
       <div class="forgot-password">
-        <ion-button fill="clear" size="small" routerLink="/auth/forgot-password">
-         ddd
+        <ion-button fill="clear" size="small" >
+          Forgot password?
         </ion-button>
       </div>
-
-      <!-- Login Button -->
       <ion-button
         type="submit"
         expand="block"
         shape="round"
         class="login-btn"
        >
-        <ion-spinner></ion-spinner>
     
+        <span>Login</span>
       </ion-button>
     </form>
-
-    <!-- Footer -->
     <div class="login-footer">
       <p>© 2026 EduTrack 360. All rights reserved.</p>
     </div>
   </div>
 </ion-content>
-
