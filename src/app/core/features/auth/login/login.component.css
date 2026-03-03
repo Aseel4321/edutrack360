@@ -72,8 +72,7 @@ min-height: 60px;
 
   ion-input {
     --color: #000;
-    --placeholder-color:   white;;
-    
+    --placeholder-color:white;
     font-size: 3vw;
   }
 
