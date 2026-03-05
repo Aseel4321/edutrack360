@@ -14,12 +14,13 @@ import { ForgotPasswordComponent } from './core/features/auth/forgot-password/fo
 
 
 
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent,],
+  declarations: [AppComponent, ],
   imports: [ ModulesModule,
   CommonModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule , HttpClientModule, TranslateModule.forRoot({
       loader: {

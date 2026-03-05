@@ -10,10 +10,11 @@ import { OtpEmailComponent } from '../auth/otp-email/otp-email.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { RestPasswordComponent } from '../auth/rest-password/rest-password.component';
 
 
 @NgModule({
-  declarations: [LoginComponent,ForgotPasswordComponent,SplashScreenComponent,OtpEmailComponent],
+  declarations: [LoginComponent,ForgotPasswordComponent,SplashScreenComponent,OtpEmailComponent,RestPasswordComponent],
   imports: [IonicModule,HttpClientModule,TranslateModule,
     CommonModule,
     ModulesRoutingModule, FontAwesomeModule, ReactiveFormsModule
