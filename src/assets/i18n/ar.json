@@ -1,85 +1,112 @@
-{"you_have_account":"هل لديك حساب؟",
-  "NAME": "الاسم",
-  "WELCOME_BACK": "مرحبًا بعودتك",
-  "LOGIN_TO_YOUR_ACCOUNT": "سجّل دخولك لحسابك",
-  "EMAIL": "البريد الإلكتروني",
-  "PASSWORD": "كلمة المرور",
-  "REMEMBER_ME": "تذكرني",
-  "FORGOT_PASSWORD": "نسيت كلمة المرور؟",
-  "LOGIN": "تسجيل الدخول",
-  "NO_ACCOUNT": "ليس لديك حساب؟",
-  "SIGN_UP": "إنشاء حساب",
-  "Male": "ذكر",
-  "Femal": "أنثى",
-  "Profile": "الملف الشخصي",
-  "Phone": "رقم الهاتف",
-  "Date_Of_Birth": "تاريخ الميلاد",
-  "CONFIRM_PASSWORD": "تأكيد كلمة المرور",
-  "EDIT_PROFILE": "تعديل الملف الشخصي",
-  "CHANGE_LANGUAGE": "تغيير اللغة",
-  "SAVE_CHANGES": "حفظ التغييرات",
-  "CANCEL": "إلغاء",
-  "OLD_PASSWORD": "كلمة المرور القديمة",
-  "NEW_PASSWORD": "كلمة المرور الجديدة",
-  "SECURITY_SETTINGS": "إعدادات الأمان",
-    "FORGOT_PASSWORD": "نسيت كلمة المرور",
-     "Supplications":"الأذكار",
-  "FORGOT_PASSWORD_INSTRUCTIONS": "يرجى إدخال بريدك الإلكتروني لإعادة تعيين كلمة المرور","Tesbeeh":"التسبيح", "QURAN": "القرآن الكريم",
-  "LAST_READ": "آخر قراءة",
-  "SURAH": "سورة",
-  "AL_FATIHAH": "الفاتحة",
-  "BACK_TO_READING": "العودة إلى القراءة",
-  "SURAH_COMPONENT": "سورة",
-  "PAGE_COMPONENT": "صفحة",
-  "PART_COMPONENT": "جزء",
-  "EMAIL": "البريد الإلكتروني",
-  "CONTINUE": "متابعة",
-  "DONT_REMEMBER_EMAIL": "لا تتذكر بريدك الإلكتروني؟",
-  "SEND_PHONE_NUMBER": "أرسل رقم الهاتف",
-  "Delete_Account":"حذف الحساب","Write_the_page_number":"اكتب رقم الصفحه","GO_to_page":"اذهب الى الصفحه",
-  "Registration":"إنشاء حساب",
-   "Male":"ذكر","save":"حفظ",
- "Female":"انثى",
-"Didntreceive":"لم يصل الرمز؟ " ,
-"SendtoEmail":"اعاده الارسال ","Morning_Adhkar":"اذكار الصباح","Dua":"الأدعيه",
-  "otp": {
-    "title": "رمز التحقق",
-    "verify": "تحقق!",
-    "instruction": "لقد أرسلنا لك رمزًا إلى",
-    "verifyEmail": "التحقق من بريدك الإلكتروني",
-    "resend": "لم يصلك الرمز؟",
-    "resendAlt": "إرسال إلى الهاتف",
-    "button": "متابعة"
+
+  {
+  "common": {
+    "appName": "إيدو تراك ٣٦٠",
+    "loading": "جاري التحميل...",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "add": "إضافة",
+    "search": "بحث",
+    "filter": "تصفية",
+    "retry": "إعادة المحاولة",
+    "close": "إغلاق",
+    "confirm": "تأكيد",
+    "back": "رجوع",
+    "next": "التالي",
+    "submit": "إرسال",
+    "ok": "موافق",
+    "yes": "نعم",
+    "no": "لا",
+    "noData": "لا توجد بيانات",
+    "pullToRefresh": "اسحب للتحديث",
+    "seeAll": "عرض الكل",
+    "more": "المزيد",
+    "error": "خطأ"
   },
-   "quick_access": {
-    "cards": [
-      {
-        "title": "إكمال القرآن",
-        "last_read": "آخر قراءة للقرآن: ٧٥",
-        "progress": "٣٠٪"
-      },
-      {
-        "title": "أذكار المساء",
-        "last_read": "آخر قراءة لأذكار المساء: ٥",
-        "progress": "٧٠٪"
-      }
-    ]
-  },"Continue":"متابعه","GENDER":"الفئه","Profile-Details":"تفاصيل الحساب","Add-Calendar":"اضافه التقويم","cancel":"الغاء","save":"حفظ","title":"العنوان","notes":"ملاحظات","alert":"تنبيه","Quick-Access":"الوصول السريع",
-  "Settings":"الاعدادات", "settings": "الإعدادات",
-  "language": "اللغة",
-  "notificationPreferences": "إعدادات الإشعارات","notifications":"الاشعارات",
-  "deleteAccount": "حذف الحساب",
-  "logout": "تسجيل الخروج",
-  "menu": [
-    "تسبيح",
-    "الحديث",
-    "أذكار",
-    "دعاء",
-    "القرآن",
-    "تفسير",
-    "اختبار حفظ القرآن"
-  ],
-  "UNREAD":"غير مقروء",
-    "READ":"مقروء"
+
+  "auth": {  "SEND_RESET_LINK": "إرسال رابط إعادة التعيين", "BACK_TO_LOGIN": "العودة إلى تسجيل الدخول",
+    "login": "تسجيل الدخول",
+    "logout": "تسجيل الخروج",
+    "email": "البريد الإلكتروني أو اسم المستخدم",
+    "password": "كلمة المرور",
+    "schoolCode": "رمز المدرسة (اختياري)",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "loginButton": "دخول",
+    "loginSuccess": "مرحباً بعودتك!",
+    "loginError": "بيانات الدخول غير صحيحة. يرجى المحاولة مرة أخرى.","resetPasswordDesc": "أدخل بريدك الإلكتروني لتلقي رابط إعادة تعيين كلمة المرور."
+  },
+
+  "dashboard": {
+    "title": "لوحة القيادة",
+    "greeting": "مرحباً",
+    "totalStudents": "إجمالي الطلاب",
+    "totalTeachers": "إجمالي المعلمين",
+    "attendanceRate": "نسبة الحضور"
+  },
+
+  "students": {
+    "title": "الطلاب",
+    "addStudent": "إضافة طالب",
+    "editStudent": "تعديل الطالب",
+    "firstName": "الاسم الأول",
+    "lastName": "الاسم الأخير"
+  },
+
+  "users": {
+    "title": "المستخدمون",
+    "username": "اسم المستخدم",
+    "email": "البريد الإلكتروني",
+    "role": "الدور"
+  },
+
+  "buses": {
+    "title": "الحافلات",
+    "busNumber": "رقم الحافلة",
+    "route": "المسار"
+  },
+
+  "messages": {
+    "title": "الرسائل",
+    "inbox": "الوارد",
+    "sent": "المرسل"
+  },
+
+  "notifications": {
+    "title": "الإشعارات",
+    "noNotifications": "لا توجد إشعارات"
+  },
+
+  "attendance": {
+    "title": "الحضور",
+    "present": "حاضر",
+    "absent": "غائب"
+  },
+
+  "profile": {
+    "title": "الملف الشخصي",
+    "settings": "الإعدادات",
+    "language": "اللغة"
+  },
+
+  "errors": {
+    "required": "هذا الحقل مطلوب.",
+    "networkError": "لا يوجد اتصال بالإنترنت."
+  },
+
+  "roles": {
+    "SYSTEM_ADMIN": "مدير النظام",
+    "TEACHER": "معلم",
+    "PARENT": "ولي أمر",
+    "STUDENT": "طالب"
+  },
+
+  "tabs": {
+    "dashboard": "الرئيسية",
+    "students": "الطلاب",
+    "messages": "الرسائل",
+    "notifications": "التنبيهات",
+    "more": "المزيد"
+  }
 }
-  

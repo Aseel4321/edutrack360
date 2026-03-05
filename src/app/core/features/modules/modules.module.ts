@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { HttpClientModule } from '@angular/common/http';
 import { ModulesRoutingModule } from './modules-routing.module';
 import { LoginComponent } from '../auth/login/login.component';
 import { IonicModule } from '@ionic/angular';
@@ -9,11 +9,12 @@ import { SplashScreenComponent } from '../auth/splash-screen/splash-screen.compo
 import { OtpEmailComponent } from '../auth/otp-email/otp-email.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
   declarations: [LoginComponent,ForgotPasswordComponent,SplashScreenComponent,OtpEmailComponent],
-  imports: [IonicModule,
+  imports: [IonicModule,HttpClientModule,TranslateModule,
     CommonModule,
     ModulesRoutingModule, FontAwesomeModule, ReactiveFormsModule
   ]

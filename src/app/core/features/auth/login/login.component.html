@@ -2,13 +2,12 @@
   <div class="login-container">
 
     <!-- Language Toggle -->
-    <div class="lang-toggle">
-      <ion-button fill="clear">
-        <img src="assets/icon/lan.png" style="height: 5vh;" />
-        AR
-      </ion-button>
-    </div>
-
+ <div class="lang-toggle">
+  <ion-button fill="clear" (click)="toggleLanguage()">
+    <img src="assets/icon/lan.png" style="height: 10vw;" />
+    {{ currentLang === 'en' ? 'EN' : 'AR'}}
+  </ion-button>
+</div>
     <!-- Header -->
     <div class="login-header">
       <div class="logo-wrapper">
@@ -16,8 +15,8 @@
           <img src="assets/icon/login.png" alt="lock" />
         </div>
       </div>
-      <h1 class="app-title">aseelzddddd</h1>
-      <p class="app-subtitle">hadeel</p>
+      <h1 class="app-title">{{ 'common.appName' | translate }}</h1>
+      <p class="app-subtitle">{{ 'auth.login' | translate }}</p>
     </div>
 
     <!-- Form -->
@@ -29,11 +28,11 @@
       <!-- Username -->
       <div class="form-group">
         <ion-item lines="none" class="input-item">
-          <img src="assets/icon/user.PNG" style="height: 2vh; margin-inline-end: 2%;" />
+          <img src="assets/icon/user.PNG" class="custom-class" />
           <ion-input
             type="text"
             formControlName="username"
-            placeholder="Enter your username">
+            placeholder="{{ 'auth.login' | translate }}">
           </ion-input>
         </ion-item>
       </div>
@@ -45,29 +44,20 @@
           <ion-input
             [type]="showPassword ? 'text' : 'password'"
             formControlName="password"
-            placeholder="Enter your password">
+            placeholder="{{ 'auth.password' | translate }}">
           </ion-input>
-          <ion-button
-            fill="clear"
-            slot="end"
-            class="toggle-password"
-            type="button"
-            (click)="showPassword = !showPassword">
-            <ion-icon
-              [name]="showPassword ? 'eye-outline' : 'eye-off-outline'">
-            </ion-icon>
-          </ion-button>
+  
         </ion-item>
       </div>
 
-      <!-- School Code -->
+      <!-- School Code --> 
       <div class="form-group">
         <ion-item lines="none" class="input-item">
-          <img src="assets/icon/schoolll.PNG" style="height: 2vh; margin-inline-end: 2%;" />
+          <img src="assets/icon/schoolll.PNG" class="custom-class" />
           <ion-input
             type="text"
             formControlName="schoolCode"
-            placeholder="Enter school code (Optional)">
+            placeholder="{{ 'auth.schoolCode' | translate }}">
           </ion-input>
         </ion-item>
       </div>
@@ -75,18 +65,18 @@
       <!-- Forgot Password -->
       <div class="forgot-password" routerLink="/forgot-password">
         <ion-button fill="clear" size="small" type="button">
-          Forgot password?
+          {{ 'auth.forgotPassword' | translate }}
         </ion-button>
       </div>
 
       <!-- Login Button -->
-      <ion-button
-        type="submit"
+      <ion-button (click)="submit()" 
         expand="block"
         shape="round"
         class="login-btn"
-        [disabled]="loginForm.invalid">
-        <span>Login</span>
+        [disabled]="loginForm.invalid"><ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+
+        <span *ngIf="!isLoading">{{ 'auth.loginButton' | translate }}</span>
       </ion-button>
 
     </form>
