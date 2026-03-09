@@ -1,0 +1,23 @@
+.custom-tabs {
+--background: linear-gradient(180deg, #181b1f 0%, #2a64b1 50%, #2a64b1 100%);;
+}
+
+.active-tab {
+  color: #ffffff;
+}
+
+.active-tab ion-icon {
+  color: #ffffff;
+}
+
+.active-tab::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  width: 22px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}

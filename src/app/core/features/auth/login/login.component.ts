@@ -8,7 +8,7 @@ import {
   schoolOutline,
   languageOutline 
 } from 'ionicons/icons';
-import { ServicesService } from '../services/services.service';
+import { ServicesService } from '../../services/services.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AlertController } from '@ionic/angular';
 import { finalize } from 'rxjs/operators';

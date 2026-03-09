@@ -11,6 +11,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CommonModule } from '@angular/common';
 import { ModulesModule } from './core/features/modules/modules.module';
 import { ForgotPasswordComponent } from './core/features/auth/forgot-password/forgot-password.component';
+import { SystemAdminComponent } from './core/features/system-admin/system-admin/system-admin.component';
+import { SchoolsComponent } from './core/features/system-admin/schools/schools.component';
+
 
 
 
@@ -20,7 +23,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, ],
+  declarations: [AppComponent,],
   imports: [ ModulesModule,
   CommonModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule , HttpClientModule, TranslateModule.forRoot({
       loader: {

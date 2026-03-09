@@ -11,10 +11,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { RestPasswordComponent } from '../auth/rest-password/rest-password.component';
+import { AdminComponent } from '../admin/admin/admin.component';
+import { SystemAdminComponent } from '../system-admin/system-admin/system-admin.component';
+import { MoreComponent } from '../system-admin/more/more.component';
 
 
 @NgModule({
-  declarations: [LoginComponent,ForgotPasswordComponent,SplashScreenComponent,OtpEmailComponent,RestPasswordComponent],
+  declarations: [LoginComponent,ForgotPasswordComponent,SplashScreenComponent,OtpEmailComponent,RestPasswordComponent,AdminComponent,SystemAdminComponent,MoreComponent ],
   imports: [IonicModule,HttpClientModule,TranslateModule,
     CommonModule,
     ModulesRoutingModule, FontAwesomeModule, ReactiveFormsModule

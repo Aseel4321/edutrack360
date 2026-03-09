@@ -1,0 +1,27 @@
+<ion-tabs>
+
+  <ion-router-outlet></ion-router-outlet>
+
+  <ion-tab-bar slot="bottom" class="custom-tabs">
+
+    <ion-tab-button 
+      (click)="setActiveTab('schools','/system-admin/schools')"
+      [ngClass]="{ 'active-tab': activeTab === 'schools' }">
+
+      <ion-icon name="school-outline"></ion-icon>
+      <ion-label>Schools</ion-label>
+
+    </ion-tab-button>
+
+    <ion-tab-button 
+      (click)="setActiveTab('more','/system-admin/more')"
+      [ngClass]="{ 'active-tab': activeTab === 'more' }">
+
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label>More</ion-label>
+
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>
