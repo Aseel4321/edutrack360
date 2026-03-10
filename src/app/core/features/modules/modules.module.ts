@@ -14,12 +14,14 @@ import { RestPasswordComponent } from '../auth/rest-password/rest-password.compo
 import { AdminComponent } from '../admin/admin/admin.component';
 import { SystemAdminComponent } from '../system-admin/system-admin/system-admin.component';
 import { MoreComponent } from '../system-admin/more/more.component';
+import { SchoolsComponent } from '../system-admin/schools/schools.component';
+import { AddSchoolComponent } from '../system-admin/add-school/add-school.component';
 
 
 @NgModule({
-  declarations: [LoginComponent,ForgotPasswordComponent,SplashScreenComponent,OtpEmailComponent,RestPasswordComponent,AdminComponent,SystemAdminComponent,MoreComponent ],
-  imports: [IonicModule,HttpClientModule,TranslateModule,
-    CommonModule,
+  declarations: [LoginComponent,ForgotPasswordComponent,SplashScreenComponent,OtpEmailComponent,RestPasswordComponent,AdminComponent,SystemAdminComponent,MoreComponent ,SchoolsComponent,AddSchoolComponent],
+  imports: [HttpClientModule,TranslateModule,
+    CommonModule,IonicModule,
     ModulesRoutingModule, FontAwesomeModule, ReactiveFormsModule
   ]
 })

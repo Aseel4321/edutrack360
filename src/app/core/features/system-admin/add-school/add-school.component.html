@@ -1,0 +1,129 @@
+<ion-content class="add-school-content" [fullscreen]="true">
+
+  <div class="add-school-container">
+
+    <!-- Header -->
+    <div class="page-header">
+
+      <ion-button fill="clear" class="back-btn" routerLink="/tabs/schools">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+
+      <div class="logo-wrapper">
+        <div class="logo-circle">
+          <img src="assets/icon/schoolll.PNG">
+        </div>
+      </div>
+
+      <h1 class="page-title">Add School</h1>
+      <p class="page-subtitle">Create new school</p>
+
+    </div>
+
+    <!-- Form -->
+    <form
+      class="school-form"
+      [formGroup]="schoolForm"
+      (ngSubmit)="createSchool()">
+
+      <!-- School Information -->
+      <div class="form-section">
+
+        <h2 class="section-title">School Information</h2>
+
+        <ion-item lines="none" class="input-item">
+          <ion-input
+            placeholder="School name"
+            formControlName="schoolName">
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item">
+          <ion-input
+            placeholder="Subdomain (my-school)"
+            formControlName="subdomain">
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item">
+          <ion-input
+            placeholder="School email"
+            formControlName="schoolEmail">
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item">
+          <ion-input
+            placeholder="Phone number"
+            formControlName="phone">
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item">
+          <ion-input
+            placeholder="School address"
+            formControlName="address">
+          </ion-input>
+        </ion-item>
+
+      </div>
+
+      <!-- Principal Account -->
+      <div class="form-section">
+
+        <h2 class="section-title">Principal Account</h2>
+
+        <ion-item lines="none" class="input-item">
+          <ion-input
+            placeholder="First name"
+            formControlName="firstName">
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item">
+          <ion-input
+            placeholder="Last name"
+            formControlName="lastName">
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item">
+          <ion-input
+            placeholder="Principal email"
+            formControlName="principalEmail">
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item">
+          <ion-input
+            placeholder="Username"
+            formControlName="username">
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="input-item">
+          <ion-input
+            type="password"
+            placeholder="Password"
+            formControlName="password">
+          </ion-input>
+        </ion-item>
+
+      </div>
+
+      <!-- Button -->
+      <ion-button
+        expand="block"
+        class="create-btn"
+        type="submit"
+        [disabled]="schoolForm.invalid">
+
+        Create School
+
+      </ion-button>
+
+    </form>
+
+  </div>
+
+</ion-content>

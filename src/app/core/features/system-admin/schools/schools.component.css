@@ -1,0 +1,141 @@
+.schools-content{
+  --background: linear-gradient(
+    180deg,
+    #242c37 0%,
+    #2a64b1 50%,
+    #242c37 100%
+  );
+}
+
+.schools-container{
+  padding: 2rem 1.5rem;
+  max-width: 420px;
+  margin: auto;
+}
+
+
+/* header */
+
+.schools-header{
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo-wrapper{
+  display:flex;
+  justify-content:center;
+  margin-bottom:1rem;
+}
+
+.logo-circle{
+  width:20vw;
+  height:20vw;
+  max-width:80px;
+  max-height:80px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.08);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:0 8px 32px rgba(37,99,235,0.3);
+}
+
+.page-title{
+  font-size:5vw;
+  font-weight:700;
+  color:white;
+}
+
+.page-subtitle{
+  font-size:3.5vw;
+  color:rgba(255,255,255,0.7);
+}
+
+
+/* schools */
+
+.schools-list{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+
+.school-card{
+
+  display:flex;
+  align-items:center;
+
+  background:rgba(255,255,255,0.08);
+
+  border-radius:14px;
+
+  padding:14px;
+
+  border:1px solid rgba(255,255,255,0.15);
+
+  backdrop-filter:blur(10px);
+
+  transition:.3s;
+}
+
+.school-card:active{
+  transform:scale(.97);
+}
+
+.school-icon img{
+  width:8vw;
+  height:8vw;
+  margin-inline-end:10px;
+}
+
+.school-info{
+  flex:1;
+}
+
+.school-info h2{
+  font-size:3.8vw;
+  color:white;
+  margin:0;
+}
+
+.school-info p{
+  font-size:3.2vw;
+  color:rgba(255,255,255,0.6);
+  margin:0;
+}
+.header-actions{
+  display:flex;
+  justify-content:flex-end;
+}
+
+.header-actions ion-button{
+  --color:white;
+  font-size:22px;
+}
+.status{
+  font-size:3vw;
+  margin-top:3px;
+}
+
+.status.active{
+  color:#22c55e;
+}
+
+.school-arrow ion-icon{
+  font-size:20px;
+  color:white;
+}.top-icon{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.top-icon img{
+  width: 40px;
+}

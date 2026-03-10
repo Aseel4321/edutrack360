@@ -1,0 +1,110 @@
+.add-school-content{
+  --background: linear-gradient(
+    180deg,
+    #242c37 0%,
+    #2a64b1 50%,
+    #242c37 100%
+  );
+}
+
+.add-school-container{
+  padding:2rem 1.5rem;
+  max-width:420px;
+  margin:auto;
+}
+
+/* header */
+
+.page-header{
+  text-align:center;
+  margin-bottom:2rem;
+  position:relative;
+}
+
+.back-btn{
+  position:absolute;
+  left:0;
+  top:0;
+  color:white;
+}
+
+.logo-wrapper{
+  display:flex;
+  justify-content:center;
+  margin-bottom:1rem;
+}
+
+.logo-circle{
+  width:20vw;
+  height:20vw;
+
+  max-width:80px;
+  max-height:80px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.08);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:0 8px 32px rgba(37,99,235,0.3);
+}
+
+.page-title{
+  font-size:5vw;
+  font-weight:700;
+  color:white;
+}
+
+.page-subtitle{
+  font-size:3.5vw;
+  color:rgba(255,255,255,0.7);
+}
+
+/* sections */
+
+.form-section{
+  margin-bottom:1.5rem;
+}
+
+.section-title{
+  color:white;
+  font-size:3.8vw;
+  margin-bottom:10px;
+}
+
+/* inputs */
+
+.input-item{
+  --background:rgba(255,255,255,0.08);
+  --border-radius:12px;
+  --min-height:52px;
+
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.2);
+
+  backdrop-filter:blur(10px);
+
+  margin-bottom:10px;
+}
+
+ion-input{
+  --color:white;
+  --placeholder-color:rgba(255,255,255,0.6);
+}
+
+/* button */
+
+.create-btn{
+  --background:linear-gradient(135deg,#2563EB,#1D4ED8);
+
+  height:52px;
+
+  font-weight:600;
+
+  margin-top:1rem;
+}

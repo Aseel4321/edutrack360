@@ -18,7 +18,7 @@ export class SystemAdminComponent implements OnInit {
 
   }setActiveTab(tab: string, route: string) {
   this.activeTab = tab;
-  this.router.navigate([route]);
+  this.router.navigateByUrl(route);
 }
   ngOnInit(): void {
   }

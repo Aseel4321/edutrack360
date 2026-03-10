@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class MoreComponent implements OnInit {
 
   constructor() { }
-
+goToAddSchool1(){console.log("schools page loaded");
+  
+}
   ngOnInit(): void {
   }
 

@@ -1,1 +1,54 @@
-<p>schools works!</p>
+<ion-content class="schools-content" [fullscreen]="true">
+<div class="top-icon">
+  <ion-button  fill="clear" (click)="goToAddSchool()">
+    <img src="assets/icon/schoolll.PNG">
+  </ion-button>
+</div>
+  <div class="schools-container" >
+
+  
+
+    <!-- Header -->
+    <div class="schools-header">
+
+      <div class="logo-wrapper">
+        <div class="logo-circle">
+          <img src="assets/icon/schoolll.PNG" />
+        </div>
+      </div>
+
+      <h1 class="page-title">Schools</h1>
+      <p class="page-subtitle">Select your school</p>
+
+    </div>
+
+
+    <!-- Schools List -->
+    <div class="schools-list">
+
+      <div class="school-card" *ngFor="let school of schools">
+
+        <div class="school-icon">
+          <img src="assets/icon/schoolll.PNG">
+        </div>
+
+        <div class="school-info">
+          <h2>{{school.name}}</h2>
+          <p *ngIf="school.email">{{school.email}}</p>
+
+          <span class="status active">
+            {{school.status}}
+          </span>
+        </div>
+
+        <div class="school-arrow">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>
