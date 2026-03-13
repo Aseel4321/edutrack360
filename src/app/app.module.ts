@@ -19,6 +19,7 @@ import { AddSchoolComponent } from './core/features/system-admin/add-school/add-
 
 
 
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }

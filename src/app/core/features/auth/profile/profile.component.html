@@ -1,0 +1,111 @@
+<ion-content class="profile-content" [fullscreen]="true">
+
+  <div class="profile-container">
+
+    <!-- Header -->
+ <div class="page-header">
+  <div class="logo-wrapper">
+        <div class="logo-circle">
+          <img src="assets/icon/schoolll.PNG">
+        </div>
+      </div>
+
+
+    </div>
+    <div class="profile-header">
+      <div class="avatar-wrapper">
+        <div class="avatar-circle">
+          <img src="assets/icon/user.PNG" />
+        </div>
+      </div>
+      <h1 class="profile-title">System Administrator</h1>
+      <p class="profile-subtitle">System_admin</p>
+    </div>
+
+
+    <!-- Form -->
+
+    <form class="profile-form">
+
+      <!-- Username -->
+      <div class="form-group">
+        <ion-item lines="none" class="input-item">
+          <img src="assets/icon/user.PNG" class="custom-class"/>
+          <ion-input
+            [(ngModel)]="profile.username"
+            [readonly]="!isEdit"
+            placeholder="Username">
+          </ion-input>
+        </ion-item>
+      </div>
+
+
+      <!-- Email -->
+      <div class="form-group">
+      <ion-item lines="none" class="input-item">
+      <img src="assets/icon/email.png" class="custom-class"/>
+      <ion-input
+       [(ngModel)]="profile.email"
+       [readonly]="!isEdit"
+       placeholder="Email">
+      </ion-input>
+        </ion-item>
+      </div>
+
+
+      <!-- Phone -->
+      <div class="form-group">
+        <ion-item lines="none" class="input-item">
+          <img src="assets/icon/phone.png" class="custom-class"/>
+          <ion-input
+            [(ngModel)]="profile.phone"
+            [readonly]="!isEdit"
+            placeholder="Phone">
+          </ion-input>
+        </ion-item>
+      </div>
+
+
+      <!-- Member Since -->
+   <div class="form-group">
+  <ion-item lines="none" class="input-item">
+
+    <img src="assets/icon/calendar.png" class="custom-class"/>
+
+    <ion-datetime
+      presentation="date"
+      [(ngModel)]="profile.memberSince"
+      name="memberSince">
+    </ion-datetime>
+
+  </ion-item>
+</div>
+      <!-- Buttons -->
+
+      <ion-button
+        expand="block"
+        shape="round"
+        class="profile-btn"
+        *ngIf="!isEdit"
+        (click)="enableEdit()">
+
+        Edit Profile
+
+      </ion-button>
+
+      <ion-button
+        expand="block"
+        shape="round"
+        class="profile-btn"
+        *ngIf="isEdit"
+        (click)="saveProfile()">
+
+        Save Changes
+
+      </ion-button>
+
+    </form>
+
+  </div>
+
+</ion-content>
