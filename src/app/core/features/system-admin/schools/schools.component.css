@@ -93,7 +93,10 @@
   height:8vw;
   margin-inline-end:10px;
 }
-
+.add-btn {margin-top: 5%;
+  font-size: 5vw;   /* تكبير علامة + */
+  color: white;      /* جعل اللون أبيض */
+}
 .school-info{
   flex:1;
 }

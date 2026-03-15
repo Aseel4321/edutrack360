@@ -11,7 +11,31 @@
   font-weight: 600;
   margin-bottom: 20px;
 }
+.logo-wrapper{
+  display:flex;
+  justify-content:center;
+  margin-bottom:1rem;
+}
 
+.logo-circle{margin-top: 2vh;margin-inline-end: 3vw;
+  width:5vw;
+  height:5vw;
+
+  max-width:80px;
+  max-height:80px;
+
+  border-radius:50%;
+
+ 
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:0 8px 32px rgba(37,99,235,0.3);
+}
 .main-card {
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);

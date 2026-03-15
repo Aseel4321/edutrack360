@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-add-school',
@@ -10,8 +11,11 @@ export class AddSchoolComponent implements OnInit {
 
   schoolForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private navCtrl: NavController) {}
 
+goBack() {
+  this.navCtrl.back();
+}
   ngOnInit() {
 
     this.schoolForm = this.fb.group({

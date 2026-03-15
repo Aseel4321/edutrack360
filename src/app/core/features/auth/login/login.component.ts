@@ -95,7 +95,7 @@ async showError(message: string) {
   }  toggleLanguage() {
     this.currentLang = this.currentLang === 'en' ? 'ar' : 'en';
     this.translate.use(this.currentLang);
-
+if(this.currentLang === 'en'){localStorage.setItem('lang','en');}else{localStorage.setItem('lang','ar');}
     document.documentElement.dir =
       this.currentLang === 'ar' ? 'rtl' : 'ltr';
   }
