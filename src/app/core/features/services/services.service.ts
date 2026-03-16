@@ -31,10 +31,19 @@ export class ServicesService {api = 'https://margherita-circadian-minta.ngrok-fr
     );}
     createSchool(data: any) {
 
+  const loginData = localStorage.getItem('login');
+
+  let token = '';
+
+  if (loginData) {
+    const userData = JSON.parse(loginData);
+    token = userData.accessToken;
+  }
+console.log(token)
   const headers = new HttpHeaders({
     'Content-Type': 'application/json',
     'Accept': 'application/json',
-     'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMCIsInNjaG9vbElkIjoxLCJyb2xlIjoiU1lTVEVNX0FETUlOIiwiaWF0IjoxNzczNjE2OTQyLCJleHAiOjE3NzM2MTc4NDJ9.UxC_5QHLXNi8MR9wmXYqTjRMDYbHPjqXLjQf2tz_UBNhTTjPI7O1xlaoO2CMQALGbJ0oQOcnY0Ahmqp9ezaeNw'
+    'Authorization': `Bearer ${token}`
   });
 
   return this.http.post(this.api, data, { headers });

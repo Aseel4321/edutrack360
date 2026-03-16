@@ -5,7 +5,8 @@ import {
   lockClosedOutline, 
   businessOutline,
   schoolOutline,
-  languageOutline 
+  languageOutline, 
+  server
 } from 'ionicons/icons';
 import { ServicesService } from '../../services/services.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -72,47 +73,50 @@ export class LoginComponent implements OnInit {
 
   submit() {
 
-    if (this.loginForm.invalid) {
-      this.showToast('Please enter username and password');
-      return;
-    }
-
-    this.isLoading = true;
-
-    const payload = {
-      usernameOrEmail: this.loginForm.value.username.trim(),
-      password: this.loginForm.value.password.trim(),
-      schoolSubdomain: this.loginForm.value.schoolCode?.trim()
-    };
-
-    this.Service.login(payload)
-      .pipe(
-        finalize(() => {
-          this.isLoading = false;
-        })
-      )
-      .subscribe({
-        next: (res) => {
-
-          console.log('Login Success:', res);
-
-          if (res.data.user.role == "SYSTEM_ADMIN") {
-            this.router.navigate(['/system-admin/schools']);
-          }
-
-          this.showToast('Login successful', 'success');
-        },
-
-        error: (err) => {
-
-          console.log(err);
-
-          this.showToast(
-            err.error?.message || 'Login failed'
-          );
-        }
-      });
+  if (this.loginForm.invalid) {
+    this.showToast('Please enter username and password');
+    return;
   }
+
+  this.isLoading = true;
+
+  const payload = {
+    usernameOrEmail: this.loginForm.value.username.trim(),
+    password: this.loginForm.value.password.trim(),
+    schoolSubdomain: this.loginForm.value.schoolCode?.trim()
+  };
+
+  this.Service.login(payload)
+    .pipe(
+      finalize(() => {
+        this.isLoading = false;
+      })
+    )
+    .subscribe({
+      next: (res) => {
+
+        console.log('Login Success:', res.data);
+
+        // حفظ البيانات
+        localStorage.setItem('login', JSON.stringify(res.data));
+
+        if (res.data.user.role == "SYSTEM_ADMIN") {
+          this.router.navigate(['/system-admin/schools']);
+        }
+
+        this.showToast('Login successful', 'success');
+      },
+
+      error: (err) => {
+
+        console.log(err);
+
+        this.showToast(
+          err.error?.message || 'Login failed'
+        );
+      }
+    });
+}
 
   toggleLanguage() {
 
