@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ServicesService } from '../../services/services.service';
-import { AlertController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 import { finalize } from 'rxjs/operators';
-
 
 @Component({
   selector: 'app-forgot-password',
@@ -18,7 +17,7 @@ export class ForgotPasswordComponent implements OnInit {
   constructor(
     private service: ServicesService,
     private fb: FormBuilder,
-    private alertController: AlertController
+    private toastController: ToastController
   ) {}
 
   ngOnInit(): void {
@@ -27,16 +26,32 @@ export class ForgotPasswordComponent implements OnInit {
     });
   }
 
-  async showMessage(header: string, message: string) {
-    const alert = await this.alertController.create({
-      message,
-      buttons: ['X']
+  // 🔔 Toast Message
+  async showToast(message: string, color: string = 'danger') {
+
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 3000,
+      position: 'bottom',
+      color: color,
+      buttons: [
+        {
+          text: 'X',
+          role: 'cancel'
+        }
+      ]
     });
 
-    await alert.present();
+    await toast.present();
   }
 
   submit() {
+
+    if (this.forgotForm.invalid) {
+      this.showToast('Please enter your email');
+      return;
+    }
+
     this.isLoading = true;
 
     const email = this.forgotForm.value.email.trim();
@@ -46,20 +61,28 @@ export class ForgotPasswordComponent implements OnInit {
         finalize(() => this.isLoading = false)
       )
       .subscribe({
+
         next: (response) => {
+
           console.log('Reset Email Sent:', response);
-          this.showMessage(
-            'تم الإرسال',
-            'تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني'
+
+          this.showToast(
+            'تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني',
+            'success'
           );
+
         },
+
         error: (error) => {
+
           console.error('Forgot Password Error:', error);
-          this.showMessage(
-            'خطأ',
+
+          this.showToast(
             error.error?.message || 'حدث خطأ، حاول مرة أخرى'
           );
+
         }
+
       });
   }
 }

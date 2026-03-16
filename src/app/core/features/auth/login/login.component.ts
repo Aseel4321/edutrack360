@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { 
   personOutline, 
   lockClosedOutline, 
@@ -10,9 +9,10 @@ import {
 } from 'ionicons/icons';
 import { ServicesService } from '../../services/services.service';
 import { TranslateService } from '@ngx-translate/core';
-import { AlertController } from '@ionic/angular';
 import { finalize } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -28,45 +28,54 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
   showPassword = false;
-private currentAlert: HTMLIonAlertElement | null = null;
-  private apiUrl = 'https://margherita-circadian-minta.ngrok-free.dev/api/auth/login';
-currentLang:any ;
-  constructor(private translate: TranslateService,private router: Router,
-    private fb: FormBuilder,private alertController: AlertController,
-    private http: HttpClient ,private Service: ServicesService
+
+  currentLang: any;
+  isLoading = false;
+
+  constructor(
+    private translate: TranslateService,
+    private router: Router,
+    private fb: FormBuilder,
+    private toastController: ToastController,
+    private Service: ServicesService
   ) {}
-isLoading = false;
-  ngOnInit(): void {this.currentLang  = localStorage.getItem('lang');;
+
+  ngOnInit(): void {
+
+    this.currentLang = localStorage.getItem('lang');
+
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
       schoolCode: ['']
     });
   }
-async showError(message: string) {
 
-  // ✅ إذا في Alert مفتوح نقفله أولاً
+  // 🔔 Toast رسالة
+  async showToast(message: string, color: string = 'danger') {
 
-  const alert = await this.alertController.create({
-   
-    message: message,
-    backdropDismiss: false,
-    buttons: [
-      {
-        text: 'X',
-        role: 'confirm'
-      }
-    ]
-  });
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 3000,
+      position: 'bottom',
+      color: color,
+      buttons: [
+        {
+          text: 'X',
+          role: 'cancel'
+        }
+      ]
+    });
 
-  this.currentAlert = alert;
+    await toast.present();
+  }
 
-  await alert.present();
+  submit() {
 
-}
-
- submit() {
-
+    if (this.loginForm.invalid) {
+      this.showToast('Please enter username and password');
+      return;
+    }
 
     this.isLoading = true;
 
@@ -77,27 +86,42 @@ async showError(message: string) {
     };
 
     this.Service.login(payload)
-       .pipe(
-      finalize(() => {
-        this.isLoading = false; // 🔥 إيقاف التحميل دائماً
-      })
-    )
-
+      .pipe(
+        finalize(() => {
+          this.isLoading = false;
+        })
+      )
       .subscribe({
         next: (res) => {
+
           console.log('Login Success:', res);
-          if(res.data.user.role=="SYSTEM_ADMIN"){}
-          this.router.navigate(['/system-admin/schools']);
+
+          if (res.data.user.role == "SYSTEM_ADMIN") {
+            this.router.navigate(['/system-admin/schools']);
+          }
+
+          this.showToast('Login successful', 'success');
         },
-        error: (err) => {console.log(err);
-          // ✅ عرض رسالة Ionic
-          this.showError(err.error?.message || 'فشل تسجيل الدخول');
+
+        error: (err) => {
+
+          console.log(err);
+
+          this.showToast(
+            err.error?.message || 'Login failed'
+          );
         }
       });
-  }  toggleLanguage() {
+  }
+
+  toggleLanguage() {
+
     this.currentLang = this.currentLang === 'en' ? 'ar' : 'en';
+
     this.translate.use(this.currentLang);
-if(this.currentLang === 'en'){localStorage.setItem('lang','en');}else{localStorage.setItem('lang','ar');}
+
+    localStorage.setItem('lang', this.currentLang);
+
     document.documentElement.dir =
       this.currentLang === 'ar' ? 'rtl' : 'ltr';
   }
