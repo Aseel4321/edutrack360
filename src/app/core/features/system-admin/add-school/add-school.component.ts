@@ -12,16 +12,21 @@ import { ServicesService } from '../../services/services.service';
 export class AddSchoolComponent implements OnInit {
 
   schoolForm!: FormGroup;
+  isLoading = false; // حالة التحميل
 
-  constructor( private toastController: ToastController,private fb: FormBuilder,private navCtrl: NavController,private http: HttpClient,private Service: ServicesService) {}
+  constructor(
+    private toastController: ToastController,
+    private fb: FormBuilder,
+    private navCtrl: NavController,
+    private http: HttpClient,
+    private Service: ServicesService
+  ) {}
 
+  goBack() {
+    this.navCtrl.back();
+  }
 
-
-goBack() {
-  this.navCtrl.back();
-}
   ngOnInit() {
-
     this.schoolForm = this.fb.group({
       schoolName: ['', Validators.required],
       subdomain: ['', Validators.required],
@@ -34,63 +39,68 @@ goBack() {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
-
   }
-createSchool() {
 
-  if (this.schoolForm.invalid) return;
+  createSchool() {
 
-  const form = this.schoolForm.value;
+    if (this.schoolForm.invalid) return;
 
-  const body = {
-    schoolName: form.schoolName,
-    subdomain: form.subdomain,
-    logoUrl: "",
-    primaryColor: "#D77e89",
-    secondaryColor: "#3F721A",
-    address: form.address,
-    phone: form.phone,
-    email: form.schoolEmail,
-    subscriptionPlan: "TRIAL",
-    principalUsername: form.username,
-    principalEmail: form.principalEmail,
-    principalPassword: form.password,
-    principalFirstName: form.firstName,
-    principalLastName: form.lastName,
-    principalPhone: form.phone
-  };
+    this.isLoading = true; // تشغيل التحميل
 
-  this.Service.createSchool(body).subscribe({
-    next: async (res) => {
+    const form = this.schoolForm.value;
 
-      await this.showToast("School created successfully", "success");
+    const body = {
+      schoolName: form.schoolName,
+      subdomain: form.subdomain,
+      logoUrl: "",
+      primaryColor: "#D77e89",
+      secondaryColor: "#3F721A",
+      address: form.address,
+      phone: form.phone,
+      email: form.schoolEmail,
+      subscriptionPlan: "TRIAL",
+      principalUsername: form.username,
+      principalEmail: form.principalEmail,
+      principalPassword: form.password,
+      principalFirstName: form.firstName,
+      principalLastName: form.lastName,
+      principalPhone: form.phone
+    };
 
-      this.schoolForm.reset();
+    this.Service.createSchool(body).subscribe({
+      next: async (res) => {
 
-    },
-    error: async (err) => {
+        this.isLoading = false;
 
-      let message = "Error creating school";
+        await this.showToast("School created successfully", "success");
 
-      if (err.error?.data?.phone) {
-        message = err.error.data.phone;
+        this.schoolForm.reset();
+
+      },
+      error: async (err) => {
+
+        this.isLoading = false;
+
+        let message = "Error creating school";
+
+        if (err.error?.data?.phone) {
+          message = err.error.data.phone;
+        }
+
+        await this.showToast(message, "danger");
+
       }
+    });
+  }
 
-      await this.showToast(message, "danger");
+  async showToast(message: string, color: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000,
+      position: 'top',
+      color: color
+    });
 
-    }
-  });
-
-}
- 
-async showToast(message: string, color: string) {
-  const toast = await this.toastController.create({
-    message: message,
-    duration: 2000,
-    position: 'top',
-    color: color
-  });
-
-  await toast.present();
-}
+    await toast.present();
+  }
 }

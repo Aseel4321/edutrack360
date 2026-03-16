@@ -127,16 +127,18 @@
       </div>
 
       <!-- Button -->
-      <ion-button
-        expand="block"
-        class="create-btn"
-        type="submit"
-        [disabled]="schoolForm.invalid">
+ 
+<ion-button expand="block"
+            (click)="createSchool()"
+            [disabled]="isLoading || schoolForm.invalid">
 
-        {{ 'school.createSchool' | translate }}
+  <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
 
-      </ion-button>
+  <span *ngIf="!isLoading">
+    {{ 'school.createSchool' | translate }}
+  </span>
 
+</ion-button>
     </form>
 
   </div>
