@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ServicesService {
+export class ServicesService {api = 'https://margherita-circadian-minta.ngrok-free.dev/api/admin/schools';
  private baseUrl = 'https://margherita-circadian-minta.ngrok-free.dev/api/auth';
   private headers = new HttpHeaders({
     'Accept': 'application/json',
@@ -29,5 +29,15 @@ export class ServicesService {
       { email },
       { headers: this.headers }
     );}
-  }
+    createSchool(data: any) {
 
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Accept': 'application/json',
+     'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMCIsInNjaG9vbElkIjoxLCJyb2xlIjoiU1lTVEVNX0FETUlOIiwiaWF0IjoxNzczNjE2OTQyLCJleHAiOjE3NzM2MTc4NDJ9.UxC_5QHLXNi8MR9wmXYqTjRMDYbHPjqXLjQf2tz_UBNhTTjPI7O1xlaoO2CMQALGbJ0oQOcnY0Ahmqp9ezaeNw'
+  });
+
+  return this.http.post(this.api, data, { headers });
+
+}
+  }

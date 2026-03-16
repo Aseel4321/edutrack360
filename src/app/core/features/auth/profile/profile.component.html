@@ -1,25 +1,21 @@
 <ion-content class="profile-content" [fullscreen]="true">
 
   <div class="profile-container">
-
-    <!-- Header -->
- <div class="page-header">
-  <div class="logo-wrapper">
-        <div class="logo-circle">
-          <img src="assets/icon/schoolll.PNG">
-        </div>
-      </div>
-
-
+  <div class="top-icon">
+      <ion-button fill="clear" class="add-btn" (click)="goBack()">
+        X
+      </ion-button>
     </div>
+    <!-- Header -->
+
     <div class="profile-header">
       <div class="avatar-wrapper">
         <div class="avatar-circle">
           <img src="assets/icon/user.PNG" />
         </div>
       </div>
-      <h1 class="profile-title">System Administrator</h1>
-      <p class="profile-subtitle">System_admin</p>
+      <h1 class="profile-title"> {{ 'roles.SYSTEM_ADMIN' | translate }}</h1>
+      
     </div>
 
 
@@ -30,11 +26,11 @@
       <!-- Username -->
       <div class="form-group">
         <ion-item lines="none" class="input-item">
-          <img src="assets/icon/user.PNG" class="custom-class"/>
+       
           <ion-input
-            [(ngModel)]="profile.username"
+            [(ngModel)]='profile.username'
             [readonly]="!isEdit"
-            placeholder="Username">
+            [placeholder]="'profile.username' | translate">
           </ion-input>
         </ion-item>
       </div>
@@ -43,11 +39,11 @@
       <!-- Email -->
       <div class="form-group">
       <ion-item lines="none" class="input-item">
-      <img src="assets/icon/email.png" class="custom-class"/>
+    
       <ion-input
        [(ngModel)]="profile.email"
        [readonly]="!isEdit"
-       placeholder="Email">
+       [placeholder]="'profile.email' | translate">
       </ion-input>
         </ion-item>
       </div>
@@ -56,11 +52,11 @@
       <!-- Phone -->
       <div class="form-group">
         <ion-item lines="none" class="input-item">
-          <img src="assets/icon/phone.png" class="custom-class"/>
+      
           <ion-input
             [(ngModel)]="profile.phone"
             [readonly]="!isEdit"
-            placeholder="Phone">
+           [placeholder]="'profile.phone' | translate">
           </ion-input>
         </ion-item>
       </div>
@@ -70,13 +66,13 @@
    <div class="form-group">
   <ion-item lines="none" class="input-item">
 
-    <img src="assets/icon/calendar.png" class="custom-class"/>
+ 
 
-    <ion-datetime
-      presentation="date"
-      [(ngModel)]="profile.memberSince"
-      name="memberSince">
-    </ion-datetime>
+   <ion-datetime
+  presentation="date"
+  [(ngModel)]="profile.memberSince"
+  name="memberSince">
+</ion-datetime>
 
   </ion-item>
 </div>
@@ -89,20 +85,21 @@
         *ngIf="!isEdit"
         (click)="enableEdit()">
 
-        Edit Profile
+        {{ 'common.edit' | translate }}
 
       </ion-button>
 
-      <ion-button
-        expand="block"
-        shape="round"
-        class="profile-btn"
-        *ngIf="isEdit"
-        (click)="saveProfile()">
+<ion-button
+  expand="block"
+  shape="round"
+  class="profile-btn"
+  *ngIf="isEdit"
+  (click)="saveProfile()"
+  [disabled]="!hasChanges()">
 
-        Save Changes
+  {{ 'common.save' | translate }}
 
-      </ion-button>
+</ion-button>
 
     </form>
 

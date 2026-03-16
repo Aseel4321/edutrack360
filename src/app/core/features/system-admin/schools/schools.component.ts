@@ -28,5 +28,6 @@ constructor(private router: Router) {}
 goToAddSchool(){
   this.router.navigate(['/add-schools']);
 }
+
 }
   

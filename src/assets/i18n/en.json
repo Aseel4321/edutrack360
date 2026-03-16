@@ -1,232 +1,83 @@
 {
-  "common": {
-    "appName": "EduTrack 360",
-    "loading": "Loading...",
+  "common": {"appName": "EduTrack 360",
     "save": "Save",
     "cancel": "Cancel",
     "delete": "Delete",
     "edit": "Edit",
-    "add": "Add",
-    "search": "Search",
-    "filter": "Filter",
-    "retry": "Retry",
-    "close": "Close",
-    "confirm": "Confirm",
-    "back": "Back",
-    "next": "Next",
-    "submit": "Submit",
-    "ok": "OK",
+    "loading": "Loading...",
+    "confirmDelete": "Are you sure you want to delete?",
     "yes": "Yes",
-    "no": "No",
-    "noData": "No data available",
-    "pullToRefresh": "Pull to refresh",
-    "seeAll": "See All",
-    "more": "More",
-    "error": "Error"
+    "no": "No"
   },
 
-  "auth": {"SEND_RESET_LINK": "Send Reset Link","BACK_TO_LOGIN": "Back to Login", "resetPasswordDesc": "Enter your email to receive a password reset link.",
-    "login": "Login",
-    "logout": "Logout",
-    "email": "Email or Username",
-    "password": "Password",
-    "schoolCode": "School Code (optional)",
-    "forgotPassword": "Forgot Password?",
-    "loginButton": "Sign In",
-    "loginSuccess": "Welcome back!",
-    "loginError": "Invalid credentials. Please try again.",
-    "logoutConfirm": "Are you sure you want to logout?",
-    "sessionExpired": "Your session has expired. Please login again.",
-    "changePassword": "Change Password",
-    "currentPassword": "Current Password",
-    "newPassword": "New Password",
-    "confirmPassword": "Confirm New Password",
-    "passwordChanged": "Password changed successfully.",
-    "biometricLogin": "Login with Biometrics",
-    "resetPassword": "Reset Password",
-    "resetPasswordDesc": "Enter your email to receive a password reset link.",
-    "resetSent": "Password reset link sent to your email."
-  },
-
-  "dashboard": {
-    "title": "Dashboard",
-    "greeting": "Hello",
-    "totalStudents": "Total Students",
-    "totalTeachers": "Total Teachers",
-    "totalParents": "Total Parents",
-    "totalBuses": "Total Buses",
-    "attendanceRate": "Attendance Rate",
-    "present": "Present",
-    "absent": "Absent",
-    "late": "Late",
-    "quickActions": "Quick Actions",
-    "recentActivity": "Recent Activity",
-    "todayAttendance": "Today's Attendance",
-    "unreadMessages": "Unread Messages",
-    "notifications": "Notifications",
-    "myChildren": "My Children",
-    "childPerformance": "Performance",
-    "feeOverview": "Fee Overview"
-  },
-
-  "students": {
-    "title": "Students",
-    "addStudent": "Add Student",
-    "editStudent": "Edit Student",
-    "firstName": "First Name",
-    "lastName": "Last Name",
-    "dateOfBirth": "Date of Birth",
-    "gender": "Gender",
-    "gradeLevel": "Grade Level",
-    "className": "Class Name",
-    "enrollmentDate": "Enrollment Date",
-    "status": "Status",
-    "parents": "Parents",
-    "noStudents": "No students found.",
-    "studentCreated": "Student created successfully.",
-    "studentUpdated": "Student updated successfully.",
-    "male": "Male",
-    "female": "Female"
+  "school": {
+    "addSchool": "Add School",
+    "createSchool": "Create School",
+    "schoolInformation": "School Information",
+    "schoolName": "School Name",
+    "subdomain": "Subdomain",
+    "schoolEmail": "School Email",
+    "phone": "Phone",
+    "address": "Address",
+    "principalAccount": "Principal Account",
+    "principalEmail": "Principal Email"
   },
 
   "users": {
-    "title": "Users",
-    "addUser": "Add User",
-    "editUser": "Edit User",
-    "userDetail": "User Detail",
-    "username": "Username",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "username": "Username"
+  }
+,
+  "auth": {"BACK_TO_LOGIN": "Back to Login","schoolCode": "School Code (optional)","SEND_RESET_LINK": "Send Reset Link","resetPasswordDesc": "Enter your email to receive a password reset link.",
+    "login": "Login",
+    "register": "Register",
     "email": "Email",
-    "phone": "Phone Number",
-    "role": "Role",
-    "address": "Address",
-    "noUsers": "No users found.",
-    "userCreated": "User created successfully.",
-    "userUpdated": "User updated successfully.",
-    "statusUpdated": "User status updated.",
-    "active": "Active",
-    "inactive": "Inactive",
-    "suspended": "Suspended"
-  },
-
-  "buses": {
-    "title": "Buses",
-    "addBus": "Add Bus",
-    "editBus": "Edit Bus",
-    "busDetail": "Bus Detail",
-    "busNumber": "Bus Number",
-    "licensePlate": "License Plate",
-    "capacity": "Capacity",
-    "driverName": "Driver Name",
-    "driverPhone": "Driver Phone",
-    "route": "Route",
-    "liveTracking": "Live Tracking",
-    "tracking": "Bus Tracking",
-    "noBuses": "No buses found.",
-    "busCreated": "Bus created successfully.",
-    "trackBus": "Track Bus",
-    "eta": "ETA",
-    "speed": "Speed",
-    "students": "Assigned Students"
-  },
-
-  "messages": {
-    "title": "Messages",
-    "detail": "Message",
-    "inbox": "Inbox",
-    "sent": "Sent",
-    "compose": "Compose",
-    "subject": "Subject",
-    "content": "Message",
-    "recipients": "Recipients",
-    "priority": "Priority",
-    "type": "Type",
-    "reply": "Reply",
-    "noMessages": "No messages yet.",
-    "messageSent": "Message sent successfully.",
-    "unread": "Unread"
-  },
-
-  "notifications": {
-    "title": "Notifications",
-    "noNotifications": "No notifications.",
-    "markRead": "Mark as Read",
-    "acknowledge": "Acknowledge",
-    "emergency": "Emergency",
-    "general": "General",
-    "busUpdate": "Bus Update",
-    "unread": "Unread",
-    "all": "All"
-  },
-
-  "attendance": {
-    "title": "Attendance",
-    "markAttendance": "Mark Attendance",
-    "present": "Present",
-    "absent": "Absent",
-    "late": "Late",
-    "excused": "Excused",
-    "date": "Date",
-    "noRecords": "No attendance records.",
-    "markedSuccess": "Attendance marked successfully."
-  },
-
-  "profile": {
-    "title": "Profile",
-    "editProfile": "Edit Profile",
-    "settings": "Settings",
-    "language": "Language",
-    "theme": "Theme",
-    "about": "About",
-    "version": "Version",
-    "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service",
-    "profileUpdated": "Profile updated successfully."
-  },
-
-  "errors": {
-    "required": "This field is required.",
-    "email": "Please enter a valid email address.",
-    "minLength": "Minimum {{min}} characters required.",
-    "maxLength": "Maximum {{max}} characters allowed.",
-    "passwordMismatch": "Passwords do not match.",
-    "networkError": "No internet connection. Please check your network.",
-    "serverError": "Something went wrong. Please try again later.",
-    "unauthorized": "You are not authorized to perform this action.",
-    "notFound": "The requested resource was not found.",
-    "generic": "An unexpected error occurred. Please try again."
-  },
-
-  "roles": {
-    "SYSTEM_ADMIN": "System Admin",
-    "PRINCIPAL": "Principal",
-    "ASSISTANT_PRINCIPAL": "Assistant Principal",
-    "TEACHER": "Teacher",
-    "PARENT": "Parent",
-    "STUDENT": "Student"
-  },
-
-  "children": {
-    "title": "My Children"
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "logout": "Logout"
   },
 
   "schools": {
-    "title": "Schools"
+    "title": "Schools",
+    "selectSchool": "Select your school",
+    "addSchool": "Add School",
+    "noSchools": "No schools found",
+    "status": {
+      "ACTIVE": "Active",
+      "INACTIVE": "Inactive",
+      "SUSPENDED": "Suspended"
+    }
+  },"profile": {"language": "Language",
+  "title": "Profile",
+  "editProfile": "Edit Profile",
+  "username": "Username",
+  "email": "Email",
+  "phone": "Phone",
+  "memberSince": "Member Since",
+  "edit": "Edit Profile",
+  "save": "Save Changes"
+},
+"roles": { "SYSTEM_ADMIN": "System Admin", "PRINCIPAL": "Principal", "ASSISTANT_PRINCIPAL": "Assistant Principal", "TEACHER": "Teacher", "PARENT": "Parent", "STUDENT": "Student" },
+
+
+  "tabs": {
+    "home": "Home",
+    "schools": "Schools",
+    "profile": "Profile",
+    "more": "More"
   },
+
+ 
 
   "more": {
     "title": "More",
     "language": "Language"
   },
 
-  "tabs": {
-    "dashboard": "Dashboard",
-    "students": "Students",
-    "messages": "Messages",
-    "notifications": "Alerts",
-    "more": "More",
-    "buses": "Buses",
-    "users": "Users",
-    "children": "Children",
-    "tracking": "Tracking"
+  "errors": {
+    "required": "This field is required",
+    "email": "Invalid email address",
+    "serverError": "Server error occurred"
   }
 }

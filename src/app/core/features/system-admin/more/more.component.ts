@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-more',
@@ -6,26 +7,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./more.component.css']
 })
 export class MoreComponent implements OnInit {
-currentLang:any ;
-  constructor() { }
-goToAddSchool1(){console.log("schools page loaded");
-  
-}
-  ngOnInit(): void {this.currentLang  = localStorage.getItem('lang');;
-    if(this.currentLang=='ar'){this.currentLang='العربية'}else{this.currentLang='English'}
+
+  currentLang: string = '';
+
+  constructor(private translate: TranslateService) {}
+
+  ngOnInit(): void {
+
+    const lang = localStorage.getItem('lang') || 'en';
+
+    this.translate.use(lang);
+
+    this.setDirection(lang);
+
+    this.currentLang = lang === 'ar' ? 'العربية' : 'English';
   }
 
+  toggleLanguage() {
 
-toggleLanguage() {
+    const lang = this.translate.currentLang === 'en' ? 'ar' : 'en';
 
-  if (this.currentLang === 'العربية') {
-    this.currentLang = 'English';
-    localStorage.setItem('lang','en');
-    document.documentElement.dir = 'ltr';
-  } else {
-    this.currentLang = 'العربية';localStorage.setItem('lang','ar');
-    document.documentElement.dir = 'rtl';
+    this.translate.use(lang);
+
+    localStorage.setItem('lang', lang);
+
+    this.setDirection(lang);
+
+    this.currentLang = lang === 'ar' ? 'العربية' : 'English';
   }
 
-}
+  setDirection(lang: string) {
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  }
+
 }

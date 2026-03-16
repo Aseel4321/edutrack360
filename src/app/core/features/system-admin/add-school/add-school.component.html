@@ -1,11 +1,13 @@
 <ion-content class="add-school-content" [fullscreen]="true">
 
   <div class="add-school-container">
-<div class="top-icon">
-  <ion-button  fill="clear" class="add-btn" (click)="goBack()">
-   X
-  </ion-button>
-</div>
+
+    <div class="top-icon">
+      <ion-button fill="clear" class="add-btn" (click)="goBack()">
+        X
+      </ion-button>
+    </div>
+
     <!-- Header -->
     <div class="page-header">
 
@@ -15,12 +17,17 @@
 
       <div class="logo-wrapper">
         <div class="logo-circle">
-          <img src="assets/icon/schoolll.PNG">
+          <img src="assets/icon/schoolll.PNG" style="width:12vw;height:12vw;">
         </div>
       </div>
 
-      <h1 class="page-title">Add School</h1>
-      <p class="page-subtitle">Create new school</p>
+      <h1 class="page-title">
+        {{ 'school.addSchool' | translate }}
+      </h1>
+
+      <p class="page-subtitle">
+        {{ 'school.createSchool' | translate }}
+      </p>
 
     </div>
 
@@ -33,39 +40,41 @@
       <!-- School Information -->
       <div class="form-section">
 
-        <h2 class="section-title">School Information</h2>
+        <h2 class="section-title">
+          {{ 'school.schoolInformation' | translate }}
+        </h2>
 
         <ion-item lines="none" class="input-item">
           <ion-input
-            placeholder="School name"
+            [placeholder]="'school.schoolName' | translate"
             formControlName="schoolName">
           </ion-input>
         </ion-item>
 
         <ion-item lines="none" class="input-item">
           <ion-input
-            placeholder="Subdomain (my-school)"
+            [placeholder]="'school.subdomain' | translate"
             formControlName="subdomain">
           </ion-input>
         </ion-item>
 
         <ion-item lines="none" class="input-item">
           <ion-input
-            placeholder="School email"
+            [placeholder]="'school.schoolEmail' | translate"
             formControlName="schoolEmail">
           </ion-input>
         </ion-item>
 
         <ion-item lines="none" class="input-item">
           <ion-input
-            placeholder="Phone number"
+            [placeholder]="'school.phone' | translate"
             formControlName="phone">
           </ion-input>
         </ion-item>
 
         <ion-item lines="none" class="input-item">
           <ion-input
-            placeholder="School address"
+            [placeholder]="'school.address' | translate"
             formControlName="address">
           </ion-input>
         </ion-item>
@@ -75,32 +84,34 @@
       <!-- Principal Account -->
       <div class="form-section">
 
-        <h2 class="section-title">Principal Account</h2>
+        <h2 class="section-title">
+          {{ 'school.principalAccount' | translate }}
+        </h2>
 
         <ion-item lines="none" class="input-item">
           <ion-input
-            placeholder="First name"
+            [placeholder]="'users.firstName' | translate"
             formControlName="firstName">
           </ion-input>
         </ion-item>
 
         <ion-item lines="none" class="input-item">
           <ion-input
-            placeholder="Last name"
+            [placeholder]="'users.lastName' | translate"
             formControlName="lastName">
           </ion-input>
         </ion-item>
 
         <ion-item lines="none" class="input-item">
           <ion-input
-            placeholder="Principal email"
+            [placeholder]="'school.principalEmail' | translate"
             formControlName="principalEmail">
           </ion-input>
         </ion-item>
 
         <ion-item lines="none" class="input-item">
           <ion-input
-            placeholder="Username"
+            [placeholder]="'users.username' | translate"
             formControlName="username">
           </ion-input>
         </ion-item>
@@ -108,7 +119,7 @@
         <ion-item lines="none" class="input-item">
           <ion-input
             type="password"
-            placeholder="Password"
+            [placeholder]="'auth.password' | translate"
             formControlName="password">
           </ion-input>
         </ion-item>
@@ -122,7 +133,7 @@
         type="submit"
         [disabled]="schoolForm.invalid">
 
-        Create School
+        {{ 'school.createSchool' | translate }}
 
       </ion-button>
 

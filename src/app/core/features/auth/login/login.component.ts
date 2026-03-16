@@ -12,6 +12,7 @@ import { ServicesService } from '../../services/services.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AlertController } from '@ionic/angular';
 import { finalize } from 'rxjs/operators';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
 private currentAlert: HTMLIonAlertElement | null = null;
   private apiUrl = 'https://margherita-circadian-minta.ngrok-free.dev/api/auth/login';
 currentLang:any ;
-  constructor(private translate: TranslateService,
+  constructor(private translate: TranslateService,private router: Router,
     private fb: FormBuilder,private alertController: AlertController,
     private http: HttpClient ,private Service: ServicesService
   ) {}
@@ -63,6 +64,7 @@ async showError(message: string) {
   await alert.present();
 
 }
+
  submit() {
 
 
@@ -80,14 +82,14 @@ async showError(message: string) {
         this.isLoading = false; // 🔥 إيقاف التحميل دائماً
       })
     )
+
       .subscribe({
         next: (res) => {
           console.log('Login Success:', res);
-
-          // ✅ الانتقال بعد النجاح
-       
+          if(res.data.user.role=="SYSTEM_ADMIN"){}
+          this.router.navigate(['/system-admin/schools']);
         },
-        error: (err) => {
+        error: (err) => {console.log(err);
           // ✅ عرض رسالة Ionic
           this.showError(err.error?.message || 'فشل تسجيل الدخول');
         }

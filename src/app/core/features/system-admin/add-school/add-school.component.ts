@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
+import { ServicesService } from '../../services/services.service';
 
 @Component({
   selector: 'app-add-school',
@@ -11,7 +13,9 @@ export class AddSchoolComponent implements OnInit {
 
   schoolForm!: FormGroup;
 
-  constructor(private fb: FormBuilder,private navCtrl: NavController) {}
+  constructor( private toastController: ToastController,private fb: FormBuilder,private navCtrl: NavController,private http: HttpClient,private Service: ServicesService) {}
+
+
 
 goBack() {
   this.navCtrl.back();
@@ -32,9 +36,61 @@ goBack() {
     });
 
   }
+createSchool() {
 
-  createSchool() {
-    console.log(this.schoolForm.value);
-  }
+  if (this.schoolForm.invalid) return;
 
+  const form = this.schoolForm.value;
+
+  const body = {
+    schoolName: form.schoolName,
+    subdomain: form.subdomain,
+    logoUrl: "",
+    primaryColor: "#D77e89",
+    secondaryColor: "#3F721A",
+    address: form.address,
+    phone: form.phone,
+    email: form.schoolEmail,
+    subscriptionPlan: "TRIAL",
+    principalUsername: form.username,
+    principalEmail: form.principalEmail,
+    principalPassword: form.password,
+    principalFirstName: form.firstName,
+    principalLastName: form.lastName,
+    principalPhone: form.phone
+  };
+
+  this.Service.createSchool(body).subscribe({
+    next: async (res) => {
+
+      await this.showToast("School created successfully", "success");
+
+      this.schoolForm.reset();
+
+    },
+    error: async (err) => {
+
+      let message = "Error creating school";
+
+      if (err.error?.data?.phone) {
+        message = err.error.data.phone;
+      }
+
+      await this.showToast(message, "danger");
+
+    }
+  });
+
+}
+ 
+async showToast(message: string, color: string) {
+  const toast = await this.toastController.create({
+    message: message,
+    duration: 2000,
+    position: 'top',
+    color: color
+  });
+
+  await toast.present();
+}
 }

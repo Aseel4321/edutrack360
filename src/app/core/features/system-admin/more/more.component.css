@@ -18,8 +18,8 @@
 }
 
 .logo-circle{margin-top: 2vh;margin-inline-end: 3vw;
-  width:5vw;
-  height:5vw;
+  width:6vw;
+  height:6vw;
 
   max-width:80px;
   max-height:80px;
@@ -36,7 +36,7 @@
 
   box-shadow:0 8px 32px rgba(37,99,235,0.3);
 }
-.main-card {
+.main-card {margin-top: 2vh;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }

@@ -1,112 +1,83 @@
 
   {
-  "common": {
-    "appName": "إيدو تراك ٣٦٠",
-    "loading": "جاري التحميل...",
+  "common": {"appName": "إيدو تراك ٣٦٠",
     "save": "حفظ",
     "cancel": "إلغاء",
     "delete": "حذف",
     "edit": "تعديل",
-    "add": "إضافة",
-    "search": "بحث",
-    "filter": "تصفية",
-    "retry": "إعادة المحاولة",
-    "close": "إغلاق",
-    "confirm": "تأكيد",
-    "back": "رجوع",
-    "next": "التالي",
-    "submit": "إرسال",
-    "ok": "موافق",
+    "loading": "جارٍ التحميل...",
+    "confirmDelete": "هل أنت متأكد من الحذف؟",
     "yes": "نعم",
-    "no": "لا",
-    "noData": "لا توجد بيانات",
-    "pullToRefresh": "اسحب للتحديث",
-    "seeAll": "عرض الكل",
-    "more": "المزيد",
-    "error": "خطأ"
+    "no": "لا"
   },
-
-  "auth": {  "SEND_RESET_LINK": "إرسال رابط إعادة التعيين", "BACK_TO_LOGIN": "العودة إلى تسجيل الدخول",
-    "login": "تسجيل الدخول",
-    "logout": "تسجيل الخروج",
-    "email": "البريد الإلكتروني أو اسم المستخدم",
-    "password": "كلمة المرور",
-    "schoolCode": "رمز المدرسة (اختياري)",
-    "forgotPassword": "نسيت كلمة المرور؟",
-    "loginButton": "دخول",
-    "loginSuccess": "مرحباً بعودتك!",
-    "loginError": "بيانات الدخول غير صحيحة. يرجى المحاولة مرة أخرى.","resetPasswordDesc": "أدخل بريدك الإلكتروني لتلقي رابط إعادة تعيين كلمة المرور."
-  },
-
-  "dashboard": {
-    "title": "لوحة القيادة",
-    "greeting": "مرحباً",
-    "totalStudents": "إجمالي الطلاب",
-    "totalTeachers": "إجمالي المعلمين",
-    "attendanceRate": "نسبة الحضور"
-  },
-
-  "students": {
-    "title": "الطلاب",
-    "addStudent": "إضافة طالب",
-    "editStudent": "تعديل الطالب",
-    "firstName": "الاسم الأول",
-    "lastName": "الاسم الأخير"
+  "school": {
+    "addSchool": "إضافة مدرسة",
+    "createSchool": "إنشاء مدرسة",
+    "schoolInformation": "معلومات المدرسة",
+    "schoolName": "اسم المدرسة",
+    "subdomain": "النطاق الفرعي",
+    "schoolEmail": "البريد الإلكتروني للمدرسة",
+    "phone": "رقم الهاتف",
+    "address": "العنوان",
+    "principalAccount": "حساب مدير المدرسة",
+    "principalEmail": "البريد الإلكتروني للمدير"
   },
 
   "users": {
-    "title": "المستخدمون",
-    "username": "اسم المستخدم",
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "username": "اسم المستخدم"
+  },
+  "auth": {"BACK_TO_LOGIN": "العودة إلى تسجيل الدخول","schoolCode": "رمز المدرسة (اختياري)","SEND_RESET_LINK": "إرسال رابط إعادة التعيين",
+  "resetPasswordDesc":"أدخل بريدك الإلكتروني لتلقي رابط إعادة تعيين كلمة المرور.",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
     "email": "البريد الإلكتروني",
-    "role": "الدور"
+    "password": "كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "logout": "تسجيل الخروج"
+  },
+"profile": {"language": "اللغة",
+  "title": "الملف الشخصي",
+  "editProfile": "تعديل الملف الشخصي",
+  "username": "اسم المستخدم",
+  "email": "البريد الإلكتروني",
+  "phone": "رقم الهاتف",
+  "memberSince": "تاريخ الانضمام",
+  "edit": "تعديل الملف الشخصي",
+  "save": "حفظ التغييرات"
+},
+  "schools": {
+    "title": "المدارس",
+    "selectSchool": "اختر مدرستك",
+    "addSchool": "إضافة مدرسة",
+    "noSchools": "لا توجد مدارس",
+    "status": {
+      "ACTIVE": "نشطة",
+      "INACTIVE": "غير نشطة",
+      "SUSPENDED": "موقوفة"
+    }
   },
 
-  "buses": {
-    "title": "الحافلات",
-    "busNumber": "رقم الحافلة",
-    "route": "المسار"
+  
+"roles": { "SYSTEM_ADMIN": "مدير النظام", "TEACHER": "معلم", "PARENT": "ولي أمر", "STUDENT": "طالب" },
+  "tabs": {
+    "home": "الرئيسية",
+    "schools": "المدارس",
+    "profile": "الملف الشخصي",
+    "more": "المزيد"
   },
 
-  "messages": {
-    "title": "الرسائل",
-    "inbox": "الوارد",
-    "sent": "المرسل"
-  },
 
-  "notifications": {
-    "title": "الإشعارات",
-    "noNotifications": "لا توجد إشعارات"
-  },
 
-  "attendance": {
-    "title": "الحضور",
-    "present": "حاضر",
-    "absent": "غائب"
-  },
-
-  "profile": {
-    "title": "الملف الشخصي",
-    "settings": "الإعدادات",
+  "more": {
+    "title": "المزيد",
     "language": "اللغة"
   },
 
   "errors": {
-    "required": "هذا الحقل مطلوب.",
-    "networkError": "لا يوجد اتصال بالإنترنت."
-  },
-
-  "roles": {
-    "SYSTEM_ADMIN": "مدير النظام",
-    "TEACHER": "معلم",
-    "PARENT": "ولي أمر",
-    "STUDENT": "طالب"
-  },
-
-  "tabs": {
-    "dashboard": "الرئيسية",
-    "students": "الطلاب",
-    "messages": "الرسائل",
-    "notifications": "التنبيهات",
-    "more": "المزيد"
+    "required": "هذا الحقل مطلوب",
+    "email": "بريد إلكتروني غير صحيح",
+    "serverError": "حدث خطأ في الخادم"
   }
 }

@@ -2,58 +2,72 @@
 
   <div class="container">
 
-    <h2 class="title">More</h2>
+    <!-- العنوان -->
+    <h2 class="title">{{ 'more.title' | translate }}</h2>
 
     <!-- بطاقة المستخدم -->
     <ion-card class="main-card">
       <ion-item lines="none">
+
         <div class="avatar" slot="start">SA</div>
 
         <ion-label>
-          <h2>System Administrator</h2>
-          <p>System_admin</p>
+          <h2>{{ 'roles.SYSTEM_ADMIN' | translate }}</h2>
+       
         </ion-label>
 
-       
       </ion-item>
     </ion-card>
 
     <!-- القائمة -->
     <ion-card class="menu-card">
 
-      <ion-item button>
+      <!-- Profile -->
+      <ion-item button routerLink="/profile">
         <div class="logo-wrapper">
-        <div class="logo-circle">
-          <img src="assets/icon/user (8).png">
+          <div class="logo-circle">
+            <img src="assets/icon/user (8).png">
+          </div>
         </div>
-      </div>
-        <ion-label>Profile</ion-label>
-         
+
+        <ion-label>{{ 'profile.title' | translate }}</ion-label>
       </ion-item>
-   <ion-item button (click)="toggleLanguage()">
-  <div class="logo-wrapper">
-    <div class="logo-circle">
-      <img src="assets/icon/translate.png">
-    </div>
-  </div>
 
-  <ion-label>Language</ion-label>
-  <ion-note slot="end">{{ currentLang }}</ion-note>
-</ion-item>
+      <!-- Language -->
+      <ion-item button (click)="toggleLanguage()">
 
-      <ion-item button class="logout">
-          <div class="logo-wrapper">
-        <div class="logo-circle">
-          <img src="assets/icon/sign-out (1).png">
+        <div class="logo-wrapper">
+          <div class="logo-circle">
+            <img src="assets/icon/translate.png">
+          </div>
         </div>
-      </div>
-        <ion-label>Logout</ion-label>
+
+        <ion-label>{{ 'profile.language' | translate }}</ion-label>
+
+        <ion-note slot="end">
+          {{ currentLang }}
+        </ion-note>
+
+      </ion-item>
+
+      <!-- Logout -->
+      <ion-item button class="logout">
+
+        <div class="logo-wrapper">
+          <div class="logo-circle">
+            <img src="assets/icon/sign-out (1).png">
+          </div>
+        </div>
+
+        <ion-label>{{ 'auth.logout' | translate }}</ion-label>
+
       </ion-item>
 
     </ion-card>
 
+    <!-- النسخة -->
     <div class="version">
-      Edutrack 360 v1.0.0
+      {{ 'common.appName' | translate }} v1.0.0
     </div>
 
   </div>
