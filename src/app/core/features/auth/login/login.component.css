@@ -48,7 +48,8 @@
   margin-bottom: 1rem;
 }
 
-.login-header .logo-circle {
+.login-header .logo-circle {  border: 1px solid rgba(255, 255, 255, 0.2);
+ box-shadow: 0 8px 32px rgba(37, 99, 235, 0.3);
   width: 20vw;
   height: 20vw;
   max-width: 80px;
@@ -56,11 +57,11 @@
   min-width: 60px;
   min-height: 60px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
+  
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.3);
+
   backdrop-filter: blur(10px);
 }
 
