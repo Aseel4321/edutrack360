@@ -22,7 +22,15 @@ export class ServicesService {api = 'https://margherita-circadian-minta.ngrok-fr
       data,
       { headers: this.headers }
     );
-  }
+  }refreshToken() {
+
+  const refreshToken = localStorage.getItem('refreshToken');
+
+  return this.http.post('/api/auth/refresh', {
+    refreshToken: refreshToken
+  });
+
+}
   forgotPassword(email: string): Observable<any> {
     return this.http.post(
       `${this.baseUrl}/forgot-password`,
@@ -43,7 +51,7 @@ console.log(token)
   const headers = new HttpHeaders({
     'Content-Type': 'application/json',
     'Accept': 'application/json',
-    'Authorization': `Bearer ${token}`
+  
   });
 
   return this.http.post(this.api, data, { headers });

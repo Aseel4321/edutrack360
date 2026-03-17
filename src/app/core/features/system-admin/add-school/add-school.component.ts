@@ -92,7 +92,7 @@ export class AddSchoolComponent implements OnInit {
       }
     });
   }
-
+ //localStorage.setItem('login', JSON.stringify(res.data));
   async showToast(message: string, color: string) {
     const toast = await this.toastController.create({
       message: message,

@@ -96,9 +96,13 @@ export class LoginComponent implements OnInit {
       next: (res) => {
 
         console.log('Login Success:', res.data);
+localStorage.setItem('accessToken', res.data.accessToken);
+localStorage.setItem('refreshToken', res.data.refreshToken);
 
+// حفظ بيانات المستخدم فقط
+localStorage.setItem('user', JSON.stringify(res.data.user));
         // حفظ البيانات
-        localStorage.setItem('login', JSON.stringify(res.data));
+       
 
         if (res.data.user.role == "SYSTEM_ADMIN") {
           this.router.navigate(['/system-admin/schools']);
@@ -117,7 +121,7 @@ export class LoginComponent implements OnInit {
       }
     });
 }
-
+ //localStorage.setItem('login', JSON.stringify(res.data));
   toggleLanguage() {
 
     this.currentLang = this.currentLang === 'en' ? 'ar' : 'en';
