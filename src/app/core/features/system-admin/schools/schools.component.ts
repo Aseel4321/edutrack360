@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ServicesService } from '../../services/services.service';
 
 @Component({
   selector: 'app-schools',
@@ -7,27 +8,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./schools.component.css']
 })
 export class SchoolsComponent implements OnInit {
-goToAddSchool1(){console.log("schools page loaded");
-  
-}
-  schools = [
-    {
-      name: 'admin.edutrack360.com',
-      status: 'Active'
-    },
-    {
-      name: 'springfield.edutrack360.com',
-      email: 'info@springfield-elementary.edu',
-      status: 'Active'
-    }
-  ];
-  ngOnInit(): void {console.log("schools page loaded");
+
+  schools: any[] = [];
+
+  constructor(
+    private router: Router,
+    private service: ServicesService
+  ) {}
+
+  ngOnInit(): void {
+this.loadSchools();
   }
-constructor(private router: Router) {}
-  
-goToAddSchool(){
-  this.router.navigate(['/add-schools']);
-}
+
+  loadSchools() {
+   this.service.getSchools().subscribe({
+  next: (res) => console.log('المدارس:', res),
+  error: (err) => console.error('خطأ:', err)
+});
+  }
+
+  goToAddSchool() {
+    this.router.navigate(['/add-schools']);
+  }
 
 }
-  

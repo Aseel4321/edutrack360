@@ -1,8 +1,9 @@
 <ion-content class="schools-content" [fullscreen]="true">
 
+  <!-- زر إضافة مدرسة -->
   <div class="top-icon">
     <ion-button fill="clear" class="add-btn" (click)="goToAddSchool()">
-     +
+      +
     </ion-button>
   </div>
 
@@ -13,7 +14,7 @@
 
       <div class="logo-wrapper">
         <div class="logo-circle">
-          <img src="assets/icon/schoolll.PNG"  style="width: 12vw;height: 12vw;"/>
+          <img src="assets/icon/schoolll.PNG" style="width:12vw;height:12vw;" />
         </div>
       </div>
 
@@ -30,33 +31,44 @@
     <!-- Schools List -->
     <div class="schools-list">
 
+      <!-- مدرسة -->
       <div class="school-card" *ngFor="let school of schools">
 
         <div class="school-icon">
-          <img src="assets/icon/schoolll.PNG" >
+          <img src="assets/icon/schoolll.PNG">
         </div>
 
         <div class="school-info">
 
-          <h2>{{school.name}}</h2>
+          <!-- اسم المدرسة -->
+          <h2>{{ school.name }}</h2>
 
+          <!-- الايميل (إن وجد) -->
           <p *ngIf="school.email">
-            {{school.email}}
+            {{ school.email }}
           </p>
 
-          <span class="status active">
-            {{ 'schools.status.ACTIVE' | translate }}
+          <!-- الحالة -->
+          <span
+            class="status"
+            [ngClass]="{
+              'active': school.status === 'ACTIVE',
+              'inactive': school.status !== 'ACTIVE'
+            }"
+          >
+            {{ school.status }}
           </span>
 
         </div>
 
+        <!-- سهم -->
         <div class="school-arrow">
           <ion-icon name="chevron-forward-outline"></ion-icon>
         </div>
 
       </div>
 
-      <!-- No Schools -->
+      <!-- حالة عدم وجود مدارس -->
       <div *ngIf="schools.length === 0" class="no-schools">
         {{ 'schools.noSchools' | translate }}
       </div>

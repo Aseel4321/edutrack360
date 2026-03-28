@@ -18,7 +18,7 @@ import { ForgotPasswordComponent } from '../auth/forgot-password/forgot-password
 import { SplashScreenComponent } from '../auth/splash-screen/splash-screen.component';
 import { OtpEmailComponent } from '../auth/otp-email/otp-email.component';
 import { RestPasswordComponent } from '../auth/rest-password/rest-password.component';
-import { ProfileComponent } from '../auth/profile/profile.component';
+import { ProfileComponent } from '../system-admin/profile/profile.component';
 
 /* Admin */
 
@@ -43,7 +43,8 @@ import { AddSchoolComponent } from '../system-admin/add-school/add-school.compon
     SystemAdminComponent,
     MoreComponent,
     SchoolsComponent,
-    AddSchoolComponent
+    AddSchoolComponent,
+    
   ],
 
   imports: [

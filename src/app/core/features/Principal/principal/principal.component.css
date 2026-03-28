@@ -1,0 +1,38 @@
+.custom-tabs{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background: linear-gradient(180deg,#183253 0%,#2a64b1 50%,#2a64b1 100%);
+}
+
+.tab-btn{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  color:#cbd5e1;
+  font-size:12px;
+}
+
+.tab-btn ion-icon{
+  font-size:22px;
+}
+
+.active-tab{
+  color:#ffffff;
+}
+
+.active-tab::after{
+  content:"";
+  position:absolute;
+  bottom:6px;
+  width:22px;
+  height:3px;
+  background:#fff;
+  border-radius:10px;
+}

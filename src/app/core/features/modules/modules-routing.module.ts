@@ -10,7 +10,7 @@ import { SystemAdminComponent } from '../system-admin/system-admin/system-admin.
 import { MoreComponent } from '../system-admin/more/more.component';
 import { SchoolsComponent } from '../system-admin/schools/schools.component';
 import { AddSchoolComponent } from '../system-admin/add-school/add-school.component';
-import { ProfileComponent } from '../auth/profile/profile.component';
+import { ProfileComponent } from '../system-admin/profile/profile.component';
 
 const routes: Routes = [{path:'login',component:LoginComponent},{path:'forgot-password',component:ForgotPasswordComponent},{path:'',component:SplashScreenComponent},{path:'otp',component:OtpEmailComponent},
   {path:'add-schools',component:AddSchoolComponent}

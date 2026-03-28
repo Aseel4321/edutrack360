@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { ModulesModule } from './core/features/modules/modules.module';
 import { Interceptor } from './core/interceptors/interceptors.interceptor';
+import { PrincipalComponent } from './core/features/Principal/principal/principal.component';
 
 
 
@@ -26,7 +27,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PrincipalComponent
   ],
 
   imports: [

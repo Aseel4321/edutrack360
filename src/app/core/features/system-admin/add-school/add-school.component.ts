@@ -12,8 +12,7 @@ import { ServicesService } from '../../services/services.service';
 export class AddSchoolComponent implements OnInit {
 
   schoolForm!: FormGroup;
-  isLoading = false; // حالة التحميل
-
+  isLoading = false; 
   constructor(
     private toastController: ToastController,
     private fb: FormBuilder,
@@ -45,7 +44,7 @@ export class AddSchoolComponent implements OnInit {
 
     if (this.schoolForm.invalid) return;
 
-    this.isLoading = true; // تشغيل التحميل
+    this.isLoading = true; 
 
     const form = this.schoolForm.value;
 
@@ -92,7 +91,7 @@ export class AddSchoolComponent implements OnInit {
       }
     });
   }
- //localStorage.setItem('login', JSON.stringify(res.data));
+
   async showToast(message: string, color: string) {
     const toast = await this.toastController.create({
       message: message,
