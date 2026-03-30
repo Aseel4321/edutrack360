@@ -6,7 +6,23 @@
 </ion-content>
 
 <div class="custom-tabs">
+ <div class="tab-btn"
+       (click)="setActiveTab('schools','/system-admin/schools')"
+       [ngClass]="{ 'active-tab': activeTab === 'schools' }">
 
+      <ion-icon name="school-outline"></ion-icon>
+      <span>{{ 'tabs.schools' | translate }}</span>
+
+  </div>
+
+  <div class="tab-btn"
+       (click)="setActiveTab('more','/system-admin/more')"
+       [ngClass]="{ 'active-tab': activeTab === 'more' }">
+
+      <ion-icon name="settings-outline"></ion-icon>
+      <span>{{ 'tabs.more' | translate }}</span>
+
+  </div>
   <div class="tab-btn"
        (click)="setActiveTab('schools','/system-admin/schools')"
        [ngClass]="{ 'active-tab': activeTab === 'schools' }">

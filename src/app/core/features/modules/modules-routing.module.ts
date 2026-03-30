@@ -11,9 +11,10 @@ import { MoreComponent } from '../system-admin/more/more.component';
 import { SchoolsComponent } from '../system-admin/schools/schools.component';
 import { AddSchoolComponent } from '../system-admin/add-school/add-school.component';
 import { ProfileComponent } from '../system-admin/profile/profile.component';
+import { PrincipalComponent } from '../Principal/principal/principal.component';
 
 const routes: Routes = [{path:'login',component:LoginComponent},{path:'forgot-password',component:ForgotPasswordComponent},{path:'',component:SplashScreenComponent},{path:'otp',component:OtpEmailComponent},
-  {path:'add-schools',component:AddSchoolComponent}
+  {path:'add-schools',component:AddSchoolComponent},{path:'principal',component:PrincipalComponent}
   ,{path:'rest-password',component:RestPasswordComponent},{path:'profile',component:ProfileComponent},{path:'admin',component:AdminComponent},{path:'system-admin',component:SystemAdminComponent, children:[      {
         path: '',
         redirectTo: '/system-admin/schools',

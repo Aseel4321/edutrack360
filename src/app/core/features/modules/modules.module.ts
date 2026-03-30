@@ -30,6 +30,7 @@ import { SystemAdminComponent } from '../system-admin/system-admin/system-admin.
 import { MoreComponent } from '../system-admin/more/more.component';
 import { SchoolsComponent } from '../system-admin/schools/schools.component';
 import { AddSchoolComponent } from '../system-admin/add-school/add-school.component';
+import { PrincipalComponent } from '../Principal/principal/principal.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { AddSchoolComponent } from '../system-admin/add-school/add-school.compon
     MoreComponent,
     SchoolsComponent,
     AddSchoolComponent,
-    
+    PrincipalComponent
   ],
 
   imports: [
