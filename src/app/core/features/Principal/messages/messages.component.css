@@ -1,0 +1,100 @@
+.messages-content {
+  --background: linear-gradient(180deg, #242c37 0%, #2a64b1 50%, #242c37 100%);
+}
+
+.messages-container {
+  padding: 1.5rem;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* Header */
+.messages-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+/* Search */
+.search-box {
+  --background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  padding: 6px 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+}
+
+/* Segment */
+.custom-segment {
+  margin-bottom: 1rem;
+}
+
+/* Message Card */
+.message-card {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: 0.3s;
+}
+
+.message-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Avatar */
+.avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Content */
+.message-content {
+  flex: 1;
+  color: #fff;
+}
+
+.message-content .top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.message-content h3 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.message-content span {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+}
+
+.message-content p {
+  font-size: 13px;
+  margin: 4px 0 0;
+  color: rgba(255,255,255,0.8);
+}
+
+/* States */
+.center {
+  text-align: center;
+  margin-top: 40%;
+  color: white;
+}
+
+.error-box ion-icon {
+  font-size: 40px;
+  color: #eb445a;
+}

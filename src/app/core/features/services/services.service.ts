@@ -71,6 +71,20 @@ console.log(token)
     };
 
     return this.http.get(url, { headers, params });
+  }  getMessages(type: string): Observable<any> {
+
+    const token = localStorage.getItem('token');
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.get(
+      `https://margherita-circadian-minta.ngrok-free.dev/api/messages?type=${type}`,
+      { headers }
+    );
   }
 getSchoolById(id: number) {
  

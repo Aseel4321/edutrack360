@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-principal',
@@ -8,18 +8,18 @@ import { Router } from '@angular/router';
 })
 export class PrincipalComponent implements OnInit {
 
-   activeTab = 'schools';
-  
-    constructor(private router: Router) {
-  
-      
-  
-    }setActiveTab(tab: string, route: string) {
-    this.activeTab = tab;
-    this.router.navigateByUrl(route);
-  }
-    ngOnInit(): void {
-    }
-  
+  activeTab = 'dashboard'; // صحح الاسم ليتطابق مع route
 
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+
+  ngOnInit(): void {this.activeTab = 'dashbord';
+    // عند التحميل يمكن إعادة توجيه للـ dashboard تلقائيًا
+    this.router.navigate(['dashboard'], { relativeTo: this.activatedRoute });
+  }
+
+  setActiveTab(tab: string, route: string) {
+    if (this.activeTab === tab) return; // لا تعيد التنقل لنفس الـ tab
+    this.activeTab = tab;
+    this.router.navigate([route], { relativeTo: this.activatedRoute }); // ✅ relative
+  }
 }

@@ -7,33 +7,33 @@
 
 <div class="custom-tabs">
  <div class="tab-btn"
-       (click)="setActiveTab('schools','/system-admin/schools')"
-       [ngClass]="{ 'active-tab': activeTab === 'schools' }">
+       (click)="setActiveTab('dashbord','/principal/dashboard')"
+       [ngClass]="{ 'active-tab': activeTab === 'dashbord' }">
 
       <ion-icon name="school-outline"></ion-icon>
-      <span>{{ 'tabs.schools' | translate }}</span>
+      <span>dashbord</span>
 
   </div>
 
   <div class="tab-btn"
-       (click)="setActiveTab('more','/system-admin/more')"
-       [ngClass]="{ 'active-tab': activeTab === 'more' }">
+       (click)="setActiveTab('students','/principal/students')"
+       [ngClass]="{ 'active-tab': activeTab === 'students' }">
 
       <ion-icon name="settings-outline"></ion-icon>
-      <span>{{ 'tabs.more' | translate }}</span>
+      <span>students</span>
 
   </div>
   <div class="tab-btn"
-       (click)="setActiveTab('schools','/system-admin/schools')"
-       [ngClass]="{ 'active-tab': activeTab === 'schools' }">
+       (click)="setActiveTab('messages','/principal/messages')"
+       [ngClass]="{ 'active-tab': activeTab === 'messages' }">
 
       <ion-icon name="school-outline"></ion-icon>
-      <span>{{ 'tabs.schools' | translate }}</span>
+      <span>messages</span>
 
   </div>
 
   <div class="tab-btn"
-       (click)="setActiveTab('more','/system-admin/more')"
+       (click)="setActiveTab('more','/principal/more')"
        [ngClass]="{ 'active-tab': activeTab === 'more' }">
 
       <ion-icon name="settings-outline"></ion-icon>

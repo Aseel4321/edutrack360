@@ -1,0 +1,57 @@
+<ion-content class="messages-content">
+
+  <div class="messages-container">
+
+    <!-- Header -->
+    <div class="messages-header">
+      <h1>Messages</h1>
+      <ion-button fill="clear">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+    <!-- Search -->
+    <ion-item lines="none" class="search-box">
+      <ion-icon name="search-outline"></ion-icon>
+      <ion-input placeholder="Search messages"></ion-input>
+    </ion-item>
+
+    <!-- Tabs -->
+    <ion-segment [(ngModel)]="activeTab" class="custom-segment">
+      <ion-segment-button value="inbox">Inbox</ion-segment-button>
+      <ion-segment-button value="sent">Sent</ion-segment-button>
+    </ion-segment>
+
+    <!-- Loading -->
+    <div *ngIf="loading" class="center">
+      <ion-spinner></ion-spinner>
+    </div>
+
+    <!-- Error -->
+    <div *ngIf="error" class="center error-box">
+      <ion-icon name="alert-circle-outline"></ion-icon>
+      <p>Failed to load messages</p>
+      <ion-button size="small" (click)="loadMessages()">Retry</ion-button>
+    </div>
+
+    <!-- Messages -->
+    <div *ngFor="let msg of messages" class="message-card">
+
+      <div class="avatar">
+        <img src="https://i.pravatar.cc/100" />
+      </div>
+
+      <div class="message-content">
+        <div class="top">
+          <h3>{{ msg.sender }}</h3>
+          <span>{{ msg.date | date:'short' }}</span>
+        </div>
+
+        <p>{{ msg.content }}</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</ion-content>

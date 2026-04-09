@@ -17,6 +17,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { ModulesModule } from './core/features/modules/modules.module';
 import { Interceptor } from './core/interceptors/interceptors.interceptor';
 import { PrincipalComponent } from './core/features/Principal/principal/principal.component';
+import { DashbordComponent } from './core/features/Principal/dashbord/dashbord.component';
+import { StudentsComponent } from './core/features/Principal/students/students.component';
+import { MessagesComponent } from './core/features/Principal/messages/messages.component';
 
 
 
@@ -28,6 +31,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
+
  
   ],
 

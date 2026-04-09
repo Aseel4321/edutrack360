@@ -31,9 +31,12 @@ import { MoreComponent } from '../system-admin/more/more.component';
 import { SchoolsComponent } from '../system-admin/schools/schools.component';
 import { AddSchoolComponent } from '../system-admin/add-school/add-school.component';
 import { PrincipalComponent } from '../Principal/principal/principal.component';
+import { DashbordComponent } from '../Principal/dashbord/dashbord.component';
+import { MessagesComponent } from '../Principal/messages/messages.component';
+import { StudentsComponent } from '../Principal/students/students.component';
 
 @NgModule({
-  declarations: [
+  declarations: [DashbordComponent,MessagesComponent,StudentsComponent,
     LoginComponent,
     ForgotPasswordComponent,
     SplashScreenComponent,
@@ -52,7 +55,7 @@ import { PrincipalComponent } from '../Principal/principal/principal.component';
     CommonModule,
     HttpClientModule,
 
-    IonicModule.forRoot(),   // مهم جداً
+    IonicModule,   // مهم جداً
 
     FormsModule,
     ReactiveFormsModule,
