@@ -9,7 +9,14 @@
     "confirmDelete": "هل أنت متأكد من الحذف؟",
     "yes": "نعم",
     "no": "لا"
-  },
+  },"messages": {
+  "title": "الرسائل",
+  "search": "ابحث في الرسائل",
+  "inbox": "الوارد",
+  "sent": "المرسلة",
+  "failed": "فشل تحميل الرسائل",
+  "retry": "إعادة المحاولة"
+},
   "school": {
     "addSchool": "إضافة مدرسة",
     "createSchool": "إنشاء مدرسة",
@@ -61,7 +68,7 @@
 
   
 "roles": { "SYSTEM_ADMIN": "مدير النظام", "TEACHER": "معلم", "PARENT": "ولي أمر", "STUDENT": "طالب" },
-  "tabs": {
+  "tabs": {"dashboard": "الرئيسية","students": "الطلاب","messages": "الرسائل",
     "home": "الرئيسية",
     "schools": "المدارس",
     "profile": "الملف الشخصي",

@@ -11,7 +11,7 @@
        [ngClass]="{ 'active-tab': activeTab === 'dashbord' }">
 
       <ion-icon name="school-outline"></ion-icon>
-      <span>dashbord</span>
+      <span>{{ 'tabs.dashboard' | translate }}</span>
 
   </div>
 
@@ -20,7 +20,7 @@
        [ngClass]="{ 'active-tab': activeTab === 'students' }">
 
       <ion-icon name="settings-outline"></ion-icon>
-      <span>students</span>
+      <span>{{ 'tabs.students' | translate }}</span>
 
   </div>
   <div class="tab-btn"
@@ -28,7 +28,7 @@
        [ngClass]="{ 'active-tab': activeTab === 'messages' }">
 
       <ion-icon name="school-outline"></ion-icon>
-      <span>messages</span>
+      <span>{{ 'tabs.messages' | translate }}</span>
 
   </div>
 

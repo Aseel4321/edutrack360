@@ -4,7 +4,7 @@
 
     <!-- Header -->
     <div class="messages-header">
-      <h1>Messages</h1>
+  <h1>{{ 'messages.title' | translate }}</h1>
       <ion-button fill="clear">
         <ion-icon name="create-outline"></ion-icon>
       </ion-button>
@@ -13,13 +13,13 @@
     <!-- Search -->
     <ion-item lines="none" class="search-box">
       <ion-icon name="search-outline"></ion-icon>
-      <ion-input placeholder="Search messages"></ion-input>
+     <ion-input [placeholder]="'messages.search' | translate"></ion-input>
     </ion-item>
 
     <!-- Tabs -->
     <ion-segment [(ngModel)]="activeTab" class="custom-segment">
-      <ion-segment-button value="inbox">Inbox</ion-segment-button>
-      <ion-segment-button value="sent">Sent</ion-segment-button>
+      <ion-segment-button value="inbox">{{ 'messages.inbox' | translate }}</ion-segment-button>
+      <ion-segment-button value="sent"> {{ 'messages.sent' | translate }}</ion-segment-button>
     </ion-segment>
 
     <!-- Loading -->
@@ -29,9 +29,9 @@
 
     <!-- Error -->
     <div *ngIf="error" class="center error-box">
-      <ion-icon name="alert-circle-outline"></ion-icon>
-      <p>Failed to load messages</p>
-      <ion-button size="small" (click)="loadMessages()">Retry</ion-button>
+      
+      <p>{{ 'messages.failed' | translate }}</p>
+      <ion-button size="small" (click)="loadMessages()">{{ 'messages.retry' | translate }}</ion-button>
     </div>
 
     <!-- Messages -->

@@ -17,15 +17,30 @@
   margin-bottom: 1rem;
 }
 
-/* Search */
+
 .search-box {
+  --min-height: 10vw; /* أصغر */
+  --padding-start: 3vw;
+  --inner-padding-end: 3vw;
   --background: rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  margin-bottom: 1rem;
-  padding: 6px 10px;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.2);
   color: white;
+}
+
+/* input */
+.search-box ion-input {
+  font-size:4vw;
+  --padding-top: 0;
+  --padding-bottom: 0;
+}
+
+/* icon */
+.search-box ion-icon {
+  font-size: 4vw;
+  margin-inline-end: 2%;
 }
 
 /* Segment */
@@ -37,8 +52,8 @@
 .message-card {
   display: flex;
   gap: 10px;
-  padding: 12px;
-  margin-bottom: 10px;
+  padding: 3%;
+  margin-bottom: 5%;
 
   background: rgba(255, 255, 255, 0.08);
   border-radius: 12px;

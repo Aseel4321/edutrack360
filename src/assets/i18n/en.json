@@ -9,7 +9,14 @@
     "yes": "Yes",
     "no": "No"
   },
-
+"messages": {
+  "title": "Messages",
+  "search": "Search messages",
+  "inbox": "Inbox",
+  "sent": "Sent",
+  "failed": "Failed to load messages",
+  "retry": "Retry"
+},
   "school": {
     "addSchool": "Add School",
     "createSchool": "Create School",
@@ -61,7 +68,7 @@
 "roles": { "SYSTEM_ADMIN": "System Admin", "PRINCIPAL": "Principal", "ASSISTANT_PRINCIPAL": "Assistant Principal", "TEACHER": "Teacher", "PARENT": "Parent", "STUDENT": "Student" },
 
 
-  "tabs": {
+  "tabs": { "dashboard": "Dashboard","students": "Students","messages": "Messages",
     "home": "Home",
     "schools": "Schools",
     "profile": "Profile",
