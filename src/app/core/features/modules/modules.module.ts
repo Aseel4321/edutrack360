@@ -34,6 +34,7 @@ import { PrincipalComponent } from '../Principal/principal/principal.component';
 import { DashbordComponent } from '../Principal/dashbord/dashbord.component';
 import { MessagesComponent } from '../Principal/messages/messages.component';
 import { StudentsComponent } from '../Principal/students/students.component';
+import { MessageComponent } from '../Principal/message/message.component';
 
 @NgModule({
   declarations: [DashbordComponent,MessagesComponent,StudentsComponent,
@@ -48,7 +49,7 @@ import { StudentsComponent } from '../Principal/students/students.component';
     MoreComponent,
     SchoolsComponent,
     AddSchoolComponent,
-    PrincipalComponent
+    PrincipalComponent,MessageComponent
   ],
 
   imports: [

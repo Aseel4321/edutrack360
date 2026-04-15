@@ -20,6 +20,7 @@ import { PrincipalComponent } from './core/features/Principal/principal/principa
 import { DashbordComponent } from './core/features/Principal/dashbord/dashbord.component';
 import { StudentsComponent } from './core/features/Principal/students/students.component';
 import { MessagesComponent } from './core/features/Principal/messages/messages.component';
+import { MessageComponent } from './core/features/Principal/message/message.component';
 
 
 
@@ -31,6 +32,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
+    
 
  
   ],

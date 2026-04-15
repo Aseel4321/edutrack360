@@ -74,7 +74,7 @@ export class AddSchoolComponent implements OnInit {
         await this.showToast("School created successfully", "success");
 
         this.schoolForm.reset();
-
+console.log('res');console.log(res);
       },
       error: async (err) => {
 

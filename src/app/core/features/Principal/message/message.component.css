@@ -1,0 +1,152 @@
+/* الخلفية */
+.login-content {
+  --background: linear-gradient(180deg, #242c37 0%, #2a64b1 50%, #242c37 100%);
+}
+
+/* الكونتينر */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: start;
+  min-height: 100%;
+  padding: 2rem 1.5rem;
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+/* الأيقونات داخل الحقول */
+.custom-class {
+  width: 5vw;
+  height: 5vw;
+  margin-inline-end: 2%;
+}
+
+/* ================= HEADER ================= */
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.logo-circle {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.3);
+
+  width: 20vw;
+  height: 20vw;
+  max-width: 80px;
+  max-height: 80px;
+  min-width: 60px;
+  min-height: 60px;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(10px);
+}
+
+.app-title {
+  font-size: 5vw;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px;
+}
+
+.app-subtitle {
+  font-size: 3.5vw;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ================= FORM ================= */
+
+.login-form .form-group {
+  margin-bottom: 14px;
+}
+
+.input-item {
+  --background: rgba(255, 255, 255, 0.08);
+  --border-radius: 12px;
+  --min-height: 52px;
+  --padding-start: 3vw;
+  --inner-padding-end: 2vw;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.input-item:focus-within {
+  border: 1px solid #60a5fa;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+}
+
+/* النصوص */
+ion-input,
+ion-select,
+ion-textarea {
+  color: #ffffff;
+  font-size: 3.5vw;
+}
+
+/* placeholder */
+ion-input::placeholder,
+ion-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* select fix */
+ion-select::part(text) {
+  color: #ffffff;
+}
+
+ion-select::part(icon) {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* textarea */
+.textarea-item {
+  --min-height: 130px;
+  align-items: flex-start;
+  padding-top: 10px;
+}
+
+/* ================= BUTTON ================= */
+
+.login-btn {
+  --background: linear-gradient(135deg, #2563EB, #1D4ED8);
+  --border-radius: 12px;
+  --box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+
+  height: 52px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* ================= FOOTER ================= */
+
+.login-footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.login-footer p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}.error-text {
+  font-size: 12px;
+  color: #eb445a; /* نفس لون الأخطاء في Ionic */
+  padding: 4px 16px 0;
+  min-height: 18px;
+}

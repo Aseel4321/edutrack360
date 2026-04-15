@@ -1,0 +1,115 @@
+<ion-content class="login-content" [fullscreen]="true">
+  <div class="login-container">
+
+    <!-- Header -->
+    <div class="login-header">
+      <div class="logo-wrapper">
+        <div class="logo-circle">
+          <img src="assets/icon/message.png" />
+        </div>
+      </div>
+
+      <h1 class="app-title">Send Message</h1>
+      <p class="app-subtitle">Create and send your message</p>
+    </div>
+
+    <!-- Form -->
+    <form 
+      class="login-form"
+      [formGroup]="messageForm"
+      (ngSubmit)="submit()">
+
+      <!-- Recipients -->
+      <div class="form-group">
+        <ion-item lines="none" class="input-item">
+          <ion-select 
+            placeholder="Select recipients"
+            formControlName="recipients">
+            <ion-select-option value="1">User 1</ion-select-option>
+            <ion-select-option value="2">User 2</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <div class="error-text"
+          *ngIf="messageForm.get('recipients')?.touched && messageForm.get('recipients')?.invalid">
+          Required
+        </div>
+      </div>
+
+      <!-- Subject -->
+      <div class="form-group">
+        <ion-item lines="none" class="input-item">
+          <ion-input 
+            placeholder="Enter subject"
+            formControlName="subject">
+          </ion-input>
+        </ion-item>
+
+        <div class="error-text"
+          *ngIf="messageForm.get('subject')?.touched && messageForm.get('subject')?.invalid">
+          Subject is required
+        </div>
+      </div>
+
+      <!-- Type -->
+      <div class="form-group">
+        <ion-item lines="none" class="input-item">
+          <ion-select formControlName="type">
+            <ion-select-option value="general">General</ion-select-option>
+            <ion-select-option value="private">Private</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+
+      <!-- Priority -->
+      <div class="form-group">
+        <ion-item lines="none" class="input-item">
+          <ion-select formControlName="priority">
+            <ion-select-option value="normal">Normal</ion-select-option>
+            <ion-select-option value="high">High</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+
+      <!-- Message -->
+      <div class="form-group">
+        <ion-item lines="none" class="input-item textarea-item">
+          <ion-textarea 
+            placeholder="Write your message..."
+            formControlName="message">
+          </ion-textarea>
+        </ion-item>
+
+        <div class="error-text"
+          *ngIf="messageForm.get('message')?.touched && messageForm.get('message')?.invalid">
+          Message is required
+        </div>
+      </div>
+
+      <!-- Send Button -->
+      <ion-button 
+        type="submit"
+        expand="block"
+        shape="round"
+        class="login-btn"
+        [disabled]="messageForm.invalid || isLoading">
+
+        <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+        <span *ngIf="!isLoading">Send Message</span>
+
+      </ion-button>
+
+      <!-- Cancel -->
+      <ion-button expand="block" fill="outline" color="medium">
+        Cancel
+      </ion-button>
+
+    </form>
+
+    <!-- Footer -->
+    <div class="login-footer">
+      <p>© 2026 EduTrack 360. All rights reserved.</p>
+    </div>
+
+  </div>
+</ion-content>

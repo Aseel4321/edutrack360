@@ -15,6 +15,7 @@ import { PrincipalComponent } from '../Principal/principal/principal.component';
 import { DashbordComponent } from '../Principal/dashbord/dashbord.component';
 import { MessagesComponent } from '../Principal/messages/messages.component';
 import { StudentsComponent } from '../Principal/students/students.component';
+import { MessageComponent } from '../Principal/message/message.component';
 
 const routes: Routes = [
   { path:'login', component:LoginComponent },
@@ -35,10 +36,10 @@ const routes: Routes = [
       { path: 'dashboard', component: DashbordComponent },
       { path: 'messages', component: MessagesComponent },
       { path: 'students', component: StudentsComponent },
-      { path: 'more', component: MoreComponent }
+      { path: 'more', component: MoreComponent },
     ]
   },
-
+{ path: 'message', component: MessageComponent },
   // System Admin Routes
   {
     path: 'system-admin',
