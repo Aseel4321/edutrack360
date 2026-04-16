@@ -7,7 +7,10 @@
   <h1>{{ 'messages.title' | translate }}</h1>
       <ion-button fill="clear">
         <ion-icon name="create-outline"></ion-icon>
-      </ion-button>
+      </ion-button>  <ion-button fill="solid" color="primary" (click)="goToSendMessage()">
+    <ion-icon name="add-outline" slot="start"></ion-icon>
+    إرسال
+  </ion-button>
     </div>
 
     <!-- Search -->

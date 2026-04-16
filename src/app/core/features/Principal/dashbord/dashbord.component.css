@@ -1,100 +1,244 @@
-.messages-content {
-  --background: linear-gradient(180deg, #242c37 0%, #2a64b1 50%, #242c37 100%);
+ion-content{
+
+--background: linear-gradient(180deg, #242c37 0%, #2a64b1 50%, #242c37 100%);
+
 }
 
-.messages-container {
-  padding: 1.5rem;
-  max-width: 500px;
-  margin: auto;
+
+/* Greeting */
+
+.dashboard-greeting{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:5vw 4vw;
+
+color:white;
+
 }
 
-/* Header */
-.messages-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
-  margin-bottom: 1rem;
+.greeting-text{
+
+font-size:3.5vw;
+
+opacity:.8;
+
 }
 
-/* Search */
-.search-box {
-  --background: rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  margin-bottom: 1rem;
-  padding: 6px 10px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: white;
+.user-name{
+
+font-size:5vw;
+
+font-weight:700;
+
 }
 
-/* Segment */
-.custom-segment {
-  margin-bottom: 1rem;
+.user-role{
+
+font-size:3vw;
+
+opacity:.7;
+
 }
 
-/* Message Card */
-.message-card {
-  display: flex;
-  gap: 10px;
-  padding: 12px;
-  margin-bottom: 10px;
+.user-avatar ion-icon{
 
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  backdrop-filter: blur(12px);
+font-size:10vw;
 
-  border: 1px solid rgba(255,255,255,0.2);
-  transition: 0.3s;
+opacity:.9;
+
 }
 
-.message-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+
+
+/* Stats */
+
+.stat-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:4vw;
+
+padding:0 4vw;
+
 }
 
-/* Avatar */
-.avatar img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+.stat-card{
+
+padding:5vw 3vw;
+
+border-radius:16px;
+
+background:rgba(255,255,255,0.08);
+
+border:1px solid rgba(255,255,255,0.2);
+
+backdrop-filter: blur(12px);
+
+text-align:center;
+
+color:white;
+
+transition:.2s;
+
 }
 
-/* Content */
-.message-content {
-  flex: 1;
-  color: #fff;
+.stat-card:active{
+
+transform:scale(.96);
+
 }
 
-.message-content .top {
-  display: flex;
-  justify-content: space-between;
+.stat-card ion-icon{
+
+font-size:6vw;
+
+margin-bottom:2vw;
+
 }
 
-.message-content h3 {
-  font-size: 14px;
-  margin: 0;
+.stat-number{
+
+font-size:5vw;
+
+font-weight:700;
+
 }
 
-.message-content span {
-  font-size: 11px;
-  color: rgba(255,255,255,0.6);
+.stat-title{
+
+font-size:3vw;
+
+opacity:.8;
+
 }
 
-.message-content p {
-  font-size: 13px;
-  margin: 4px 0 0;
-  color: rgba(255,255,255,0.8);
+
+
+/* Attendance */
+
+.attendance-card{
+
+margin:5vw 4vw;
+
+padding:5vw;
+
+border-radius:16px;
+
+background:rgba(255,255,255,0.08);
+
+border:1px solid rgba(255,255,255,0.2);
+
+backdrop-filter: blur(12px);
+
+color:white;
+
 }
 
-/* States */
-.center {
-  text-align: center;
-  margin-top: 40%;
-  color: white;
+.attendance-title{
+
+font-size:4vw;
+
+font-weight:600;
+
+margin-bottom:4vw;
+
 }
 
-.error-box ion-icon {
-  font-size: 40px;
-  color: #eb445a;
+.attendance-row{
+
+display:flex;
+
+justify-content:space-between;
+
+text-align:center;
+
+}
+
+.att-number{
+
+font-size:5vw;
+
+font-weight:700;
+
+}
+
+.att-label{
+
+font-size:3vw;
+
+opacity:.8;
+
+}
+
+
+
+/* Quick actions */
+
+.quick-actions{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:4vw;
+
+padding:0 4vw;
+
+margin-top:4vw;
+
+}
+
+.quick-action{
+
+text-align:center;
+
+color:white;
+
+}
+
+.quick-icon{
+
+width:12vw;
+
+height:12vw;
+
+border-radius:14px;
+
+background:rgba(255,255,255,0.1);
+
+border:1px solid rgba(255,255,255,0.2);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin:auto;
+
+backdrop-filter: blur(10px);
+
+}
+
+.quick-icon ion-icon{
+
+font-size:6vw;
+
+}
+
+.quick-label{
+
+font-size:3vw;
+
+margin-top:2vw;
+
+opacity:.9;
+
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../../services/services.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-messages',
@@ -11,7 +12,7 @@ export class MessagesComponent implements OnInit {
 
 
 
-    constructor(private messagesService: ServicesService) {}
+    constructor(private messagesService: ServicesService,private router: Router) {}
   messages: any[] = [];
   filteredMessages: any[] = [];
 
@@ -63,7 +64,9 @@ export class MessagesComponent implements OnInit {
     this.searchTerm = event.detail.value;
     this.applyFilter();
   }
-
+goToSendMessage() {
+  this.router.navigate(['/message']); // عدل الرابط حسب مشروعك
+}
   applyFilter() {
     if (!this.searchTerm) {
       this.filteredMessages = this.messages;

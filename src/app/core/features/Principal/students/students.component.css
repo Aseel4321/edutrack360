@@ -1,0 +1,120 @@
+.students-content {
+ --background: linear-gradient(180deg, #242c37 0%, #2a64b1 50%, #242c37 100%);
+}
+
+.container {
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h2 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.header ion-icon {
+  font-size: 24px;
+}
+
+/* Search */
+.search-box {
+  margin-top: 15px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.search-box ion-icon {
+  margin-right: 10px;
+  color: #888;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  overflow-x: auto;
+}
+
+.chip {
+  padding: 8px 14px;
+  background: #eee;
+  border-radius: 20px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.chip.active {
+  background: #dbe4ff;
+  color: #3b6ef5;
+  font-weight: bold;
+}
+
+/* Student Card */
+.student-card {
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  background: #4c5dfc;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.info {
+  flex: 1;
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.info p {
+  margin: 0;
+  color: #888;
+  font-size: 13px;
+}
+
+/* Status */
+.status {
+  background: #d4f5e9;
+  color: #2bb673;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+/* FAB */
+ion-fab-button {
+  --background: #3b6ef5;
+}
