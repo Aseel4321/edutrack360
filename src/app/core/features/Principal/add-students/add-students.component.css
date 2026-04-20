@@ -1,0 +1,175 @@
+/* =======================
+   Background
+======================= */
+.login-content {
+  --background: linear-gradient(180deg, #242c37 0%, #2a64b1 50%, #242c37 100%);
+}
+
+/* =======================
+   Container
+======================= */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100%;
+  padding: 2rem 1.5rem;
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+/* =======================
+   Header
+======================= */
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.logo-circle {
+  width: 22vw;
+  height: 22vw;
+  max-width: 90px;
+  max-height: 90px;
+  min-width: 65px;
+  min-height: 65px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.3);
+}
+
+.app-title {
+  font-size: 5vw;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.app-subtitle {
+  font-size: 3.5vw;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* =======================
+   Form
+======================= */
+.login-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.input-item {
+  --background: rgba(255, 255, 255, 0.08);
+  --border-radius: 12px;
+  --min-height: 52px;
+  --padding-start: 3vw;
+  --inner-padding-end: 2vw;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+}
+
+/* Focus effect */
+.input-item:focus-within {
+  border: 1px solid #60a5fa;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.25);
+}
+
+/* Inputs */
+ion-input {
+  --color: #ffffff;
+  --placeholder-color: rgba(255, 255, 255, 0.6);
+  font-size: 3.6vw;
+}
+
+/* Select & Date */
+ion-select,
+ion-datetime {
+  width: 100%;
+  color: #ffffff;
+}
+
+/* Fix text inside select/datetime */
+ion-select::part(text),
+ion-datetime::part(text) {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* =======================
+   Button
+======================= */
+.login-btn {
+  --background: linear-gradient(135deg, #2563EB, #1D4ED8);
+  --border-radius: 12px;
+  --box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+
+  height: 52px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 0.8rem;
+  text-transform: none;
+}
+
+/* Disabled button */
+.login-btn[disabled] {
+  opacity: 0.6;
+}
+/* placeholder الوهمي */
+.custom-item {
+  position: relative;
+}
+
+.fake-placeholder {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ضبط العناصر */
+ion-datetime,
+ion-select {
+  width: 100%;
+  color: #fff;
+  padding-top: 10px;
+}
+
+/* تحسين النص */
+ion-select::part(text),
+ion-datetime::part(text) {
+  color: rgba(255, 255, 255, 0.9);
+}
+/* =======================
+   Responsive تحسين
+======================= */
+@media (min-width: 768px) {
+  .app-title {
+    font-size: 24px;
+  }
+
+  .app-subtitle {
+    font-size: 16px;
+  }
+
+  ion-input {
+    font-size: 16px;
+  }
+}

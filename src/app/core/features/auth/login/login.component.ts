@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
     await toast.present();
   }
 
-  submit() {
+submit() {
 
   if (this.loginForm.invalid) {
     this.showToast('Please enter username and password');
@@ -87,24 +87,29 @@ export class LoginComponent implements OnInit {
   };
 
   this.Service.login(payload)
-    .pipe(
-      finalize(() => {
-        this.isLoading = false;
-      })
-    )
+    .pipe(finalize(() => this.isLoading = false))
     .subscribe({
       next: (res) => {
 
-        console.log('Login Success:', res.data);
-localStorage.setItem('accessToken', res.data.accessToken);
-localStorage.setItem('refreshToken', res.data.refreshToken);
+        console.log('Login Success:', res);
 
-// حفظ بيانات المستخدم فقط
-localStorage.setItem('user', JSON.stringify(res.data.user));
-        // حفظ البيانات
-       
+        // ✅ API عندك يرجع داخل data
+        const data = res.data;
 
-        if (res.data.user.role == "SYSTEM_ADMIN") {
+        if (!data?.accessToken) {
+          this.showToast('Invalid login response');
+          return;
+        }
+
+        // ✅ تخزين التوكينات
+        localStorage.setItem('accessToken', data.accessToken);
+        localStorage.setItem('refreshToken', data.refreshToken);
+
+        // ✅ تخزين المستخدم
+        localStorage.setItem('user', JSON.stringify(data.user));
+
+        // ✅ توجيه
+        if (data.user?.role === "SYSTEM_ADMIN") {
           this.router.navigate(['/system-admin/schools']);
         }
 
@@ -112,12 +117,8 @@ localStorage.setItem('user', JSON.stringify(res.data.user));
       },
 
       error: (err) => {
-
         console.log(err);
-
-        this.showToast(
-          err.error?.message || 'Login failed'
-        );
+        this.showToast(err.error?.message || 'Login failed');
       }
     });
 }

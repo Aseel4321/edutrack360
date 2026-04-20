@@ -10,6 +10,7 @@ import {
 import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { catchError, switchMap, filter, take } from 'rxjs/operators';
 import { ServicesService } from '../features/services/services.service';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class Interceptor implements HttpInterceptor {
@@ -17,7 +18,10 @@ export class Interceptor implements HttpInterceptor {
   private isRefreshing = false;
   private refreshTokenSubject = new BehaviorSubject<string | null>(null);
 
-  constructor(private service: ServicesService) {}
+  constructor(
+    private service: ServicesService,
+    private router: Router
+  ) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
@@ -30,9 +34,9 @@ export class Interceptor implements HttpInterceptor {
     }
 
     const token = localStorage.getItem('accessToken');
+
     let authReq = req;
 
-    // ✅ إضافة التوكين
     if (token) {
       authReq = this.addToken(req, token);
     }
@@ -40,11 +44,7 @@ export class Interceptor implements HttpInterceptor {
     return next.handle(authReq).pipe(
       catchError((error: HttpErrorResponse) => {
 
-        // ✅ معالجة 401 (لكن ليس refresh)
-        if (
-          error.status === 401 &&
-          !req.url.includes('/auth/refresh')
-        ) {
+        if (error.status === 401) {
           return this.handle401Error(authReq, next);
         }
 
@@ -53,7 +53,6 @@ export class Interceptor implements HttpInterceptor {
     );
   }
 
-  // ✅ إضافة Authorization
   private addToken(req: HttpRequest<any>, token: string): HttpRequest<any> {
     return req.clone({
       setHeaders: {
@@ -62,7 +61,6 @@ export class Interceptor implements HttpInterceptor {
     });
   }
 
-  // ✅ معالجة انتهاء التوكين
   private handle401Error(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     if (!this.isRefreshing) {
@@ -76,30 +74,38 @@ export class Interceptor implements HttpInterceptor {
 
           this.isRefreshing = false;
 
-          const newToken =
-            res?.data?.accessToken ||
-            res?.accessToken ||
-            res?.token;
+          console.log('REFRESH RESPONSE:', res);
 
-          if (!newToken) {
-            throw new Error('No access token returned');
+          // ✅ الحل الصحيح حسب API
+          const data = res.data;
+
+          if (!data?.accessToken) {
+            throw new Error('Invalid refresh response');
           }
 
-          // ✅ حفظ التوكين الجديد
-          localStorage.setItem('accessToken', newToken);
+          // ✅ تخزين التوكينات
+          localStorage.setItem('accessToken', data.accessToken);
 
-          this.refreshTokenSubject.next(newToken);
+          if (data.refreshToken) {
+            localStorage.setItem('refreshToken', data.refreshToken);
+          }
 
-          // إعادة الطلب
-          return next.handle(this.addToken(req, newToken));
+          this.refreshTokenSubject.next(data.accessToken);
+
+          return next.handle(this.addToken(req, data.accessToken));
         }),
 
         catchError((err) => {
 
           this.isRefreshing = false;
 
-          // ❌ logout
-          localStorage.clear();
+          console.log('REFRESH ERROR:', err);
+
+          // ✅ logout فقط إذا 401
+          if (err.status === 401) {
+            localStorage.clear();
+            this.router.navigate(['/login']);
+          }
 
           return throwError(() => err);
         })
@@ -107,7 +113,6 @@ export class Interceptor implements HttpInterceptor {
 
     } else {
 
-      // ✅ انتظار refresh الحالي
       return this.refreshTokenSubject.pipe(
         filter(token => token != null),
         take(1),

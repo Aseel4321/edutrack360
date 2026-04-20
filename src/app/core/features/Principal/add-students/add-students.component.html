@@ -1,0 +1,115 @@
+<ion-content class="login-content" [fullscreen]="true">
+  <div class="login-container">
+
+    <!-- Header -->
+    <div class="login-header">
+      <div class="logo-wrapper">
+        <div class="logo-circle">
+          <img src="assets/icon/student.png" />
+        </div>
+      </div>
+      <h1 class="app-title">Add Student</h1>
+      <p class="app-subtitle">Enter student details</p>
+    </div>
+
+    <!-- Form -->
+    <form [formGroup]="studentForm" (ngSubmit)="submit()" class="login-form">
+
+      <!-- First Name -->
+      <div class="form-group">
+        <ion-item lines="none" class="input-item">
+          <ion-input placeholder="First Name" formControlName="firstName"></ion-input>
+        </ion-item>
+      </div>
+
+      <!-- Last Name -->
+      <div class="form-group">
+        <ion-item lines="none" class="input-item">
+          <ion-input placeholder="Last Name" formControlName="lastName"></ion-input>
+        </ion-item>
+      </div>
+
+      <!-- Date of Birth -->
+      <div class="form-group">
+        <ion-item lines="none" class="input-item custom-item">
+
+          <span class="fake-placeholder" *ngIf="!studentForm.get('dob')?.value">
+            Date of Birth
+          </span>
+
+          <ion-datetime
+            presentation="date"
+            formControlName="dob">
+          </ion-datetime>
+
+        </ion-item>
+      </div>
+
+      <!-- Gender -->
+      <div class="form-group">
+        <ion-item lines="none" class="input-item custom-item">
+
+          <span class="fake-placeholder" *ngIf="!studentForm.get('gender')?.value">
+            Gender
+          </span>
+
+          <ion-select formControlName="gender">
+            <ion-select-option value="male">Male</ion-select-option>
+            <ion-select-option value="female">Female</ion-select-option>
+          </ion-select>
+
+        </ion-item>
+      </div>
+
+      <!-- Grade -->
+      <div class="form-group">
+        <ion-item lines="none" class="input-item custom-item">
+
+          <span class="fake-placeholder" *ngIf="!studentForm.get('grade')?.value">
+            Grade Level
+          </span>
+
+          <ion-select formControlName="grade">
+            <ion-select-option value="1">Grade 1</ion-select-option>
+            <ion-select-option value="2">Grade 2</ion-select-option>
+          </ion-select>
+
+        </ion-item>
+      </div>
+
+      <!-- Class -->
+      <div class="form-group">
+        <ion-item lines="none" class="input-item">
+          <ion-input placeholder="Class Name" formControlName="className"></ion-input>
+        </ion-item>
+      </div>
+
+      <!-- Enrollment Date -->
+      <div class="form-group">
+        <ion-item lines="none" class="input-item custom-item">
+
+          <span class="fake-placeholder" *ngIf="!studentForm.get('enrollDate')?.value">
+            Enrollment Date
+          </span>
+
+          <ion-datetime
+            presentation="date"
+            formControlName="enrollDate">
+          </ion-datetime>
+
+        </ion-item>
+      </div>
+
+      <!-- Button -->
+      <ion-button 
+        expand="block" 
+        type="submit"
+        class="login-btn" 
+        [disabled]="studentForm.invalid">
+        Add Student
+      </ion-button>
+
+    </form>
+
+  </div>
+</ion-content>

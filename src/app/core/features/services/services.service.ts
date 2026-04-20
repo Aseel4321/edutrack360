@@ -21,13 +21,18 @@ export class ServicesService {
   }
 
   // ✅ REFRESH TOKEN
-  refreshToken(): Observable<any> {
-    const refreshToken = localStorage.getItem('refreshToken');
+refreshToken(): Observable<any> {
 
-    return this.http.post(`${this.baseUrl}/auth/refresh`, {
-      refreshToken: refreshToken
-    });
+  const refreshToken = localStorage.getItem('refreshToken');
+
+  if (!refreshToken) {
+    throw new Error('No refresh token');
   }
+
+  return this.http.post(`${this.baseUrl}/auth/refresh`, {
+    refreshToken: refreshToken
+  });
+}
 
   // ✅ FORGOT PASSWORD
   forgotPassword(email: string): Observable<any> {

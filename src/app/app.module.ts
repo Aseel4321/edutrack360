@@ -21,6 +21,7 @@ import { DashbordComponent } from './core/features/Principal/dashbord/dashbord.c
 import { StudentsComponent } from './core/features/Principal/students/students.component';
 import { MessagesComponent } from './core/features/Principal/messages/messages.component';
 import { MessageComponent } from './core/features/Principal/message/message.component';
+import { AddStudentsComponent } from './core/features/Principal/add-students/add-students.component';
 
 
 
@@ -32,6 +33,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
+  
     
 
  

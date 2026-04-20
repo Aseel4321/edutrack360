@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../../services/services.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dashbord',
@@ -8,7 +9,7 @@ import { ServicesService } from '../../services/services.service';
 })
 export class DashbordComponent implements OnInit {
 
-    constructor(private messagesService:ServicesService) {}
+    constructor(private messagesService:ServicesService,private router: Router, private activatedRoute: ActivatedRoute) {}
   messages: any[] = [];
   filteredMessages: any[] = [];
 
@@ -24,7 +25,11 @@ export class DashbordComponent implements OnInit {
   ngOnInit() {
     this.loadMessages();
   }
-
+ setActiveTab(tab: string, route: string) {
+    if (this.activeTab === tab) return; // لا تعيد التنقل لنفس الـ tab
+    this.activeTab = tab;
+    this.router.navigate([route], { relativeTo: this.activatedRoute }); // ✅ relative
+  }
   // =========================
   // Load Messages
   // =========================
