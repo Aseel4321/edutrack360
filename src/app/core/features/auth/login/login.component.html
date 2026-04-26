@@ -1,18 +1,19 @@
 <ion-content class="login-content" [fullscreen]="true">
   <div class="login-container">
 
-    <!-- Language Toggle -->
- <div class="lang-toggle">
-  <ion-button fill="clear" (click)="toggleLanguage()">
-    <img src="assets/icon/lan.png" style="height: 10vw;" />
-    {{ currentLang === 'en' ? 'EN' : 'AR'}}
-  </ion-button>
-</div>
+    <!-- Language -->
+    <div class="lang-toggle">
+      <ion-button fill="clear" (click)="toggleLanguage()">
+        <img src="assets/icon/lan.png" style="height: 10vw;" />
+        {{ currentLang === 'en' ? 'EN' : 'AR' }}
+      </ion-button>
+    </div>
+
     <!-- Header -->
     <div class="login-header">
       <div class="logo-wrapper">
         <div class="logo-circle">
-          <img src="assets/icon/login.png" alt="lock" />
+          <img src="assets/icon/login.png" />
         </div>
       </div>
       <h1 class="app-title">{{ 'common.appName' | translate }}</h1>
@@ -20,19 +21,14 @@
     </div>
 
     <!-- Form -->
-    <form
-      class="login-form"
-      [formGroup]="loginForm"
-      (ngSubmit)="submit()">
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="submit()">
 
       <!-- Username -->
       <div class="form-group">
         <ion-item lines="none" class="input-item">
           <img src="assets/icon/user.PNG" class="custom-class" />
-          <ion-input
-            type="text"
-            formControlName="username"
-            placeholder="{{ 'auth.login' | translate }}">
+          <ion-input formControlName="username"
+                     placeholder="{{ 'auth.login' | translate }}">
           </ion-input>
         </ion-item>
       </div>
@@ -40,50 +36,50 @@
       <!-- Password -->
       <div class="form-group">
         <ion-item lines="none" class="input-item">
-          <img src="assets/icon/passwordd.PNG" style="height:5vw; margin-inline-end: 2%;" />
-          <ion-input
-            [type]="showPassword ? 'text' : 'password'"
-            formControlName="password"
-            placeholder="{{ 'auth.password' | translate }}">
+          <img src="assets/icon/passwordd.PNG" class="custom-class" />
+          <ion-input [type]="showPassword ? 'text' : 'password'"
+                     formControlName="password"
+                     placeholder="{{ 'auth.password' | translate }}">
           </ion-input>
-  
         </ion-item>
       </div>
 
-      <!-- School Code --> 
+      <!-- School Code -->
       <div class="form-group">
         <ion-item lines="none" class="input-item">
           <img src="assets/icon/schoolll.PNG" class="custom-class" />
-          <ion-input
-            type="text"
-            formControlName="schoolCode"
-            placeholder="{{ 'auth.schoolCode' | translate }}">
+          <ion-input formControlName="schoolCode"
+                     placeholder="{{ 'auth.schoolCode' | translate }}">
           </ion-input>
         </ion-item>
       </div>
 
-      <!-- Forgot Password -->
+      <!-- Forgot -->
       <div class="forgot-password" routerLink="/forgot-password">
         <ion-button fill="clear" size="small" type="button">
           {{ 'auth.forgotPassword' | translate }}
         </ion-button>
       </div>
 
-      <!-- Login Button -->
-      <ion-button (click)="submit()" 
-        expand="block"
-        shape="round"
-        class="login-btn"
-        [disabled]="loginForm.invalid"><ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+      <!-- Button -->
+      <ion-button expand="block"
+                  shape="round"
+                  class="login-btn"
+                  [disabled]="loginForm.invalid || isLoading"
+                  type="submit">
 
-        <span *ngIf="!isLoading">{{ 'auth.login' | translate }}</span>
+        <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+        <span *ngIf="!isLoading">
+          {{ 'auth.login' | translate }}
+        </span>
+
       </ion-button>
 
     </form>
 
     <!-- Footer -->
     <div class="login-footer">
-      <p>© 2026 EduTrack 360. All rights reserved.</p>
+      <p>© 2026 EduTrack 360</p>
     </div>
 
   </div>

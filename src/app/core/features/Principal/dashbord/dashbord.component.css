@@ -1,244 +1,207 @@
-ion-content{
-
---background: linear-gradient(180deg, #242c37 0%, #2a64b1 50%, #242c37 100%);
-
+.schools-page {
+  --background: linear-gradient(180deg, #0f172a, #1e3a8a 50%, #0f172a);
+  animation: pageFadeIn 0.8s ease-out both;
 }
 
-
-/* Greeting */
-
-.dashboard-greeting{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:5vw 4vw;
-
-color:white;
-
+/* دخول الصفحة */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.greeting-text{
-
-font-size:3.5vw;
-
-opacity:.8;
-
+/* Container */
+.container {
+  padding: 1.5rem;
+  max-width: 420px;
+  margin: auto;
 }
 
-.user-name{
-
-font-size:5vw;
-
-font-weight:700;
-
+/* Animation for children */
+.container > * {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: itemIn 0.6s ease forwards;
 }
 
-.user-role{
+.container > *:nth-child(1) { animation-delay: 0.1s; }
+.container > *:nth-child(2) { animation-delay: 0.2s; }
+.container > *:nth-child(3) { animation-delay: 0.3s; }
+.container > *:nth-child(4) { animation-delay: 0.4s; }
+.container > *:nth-child(5) { animation-delay: 0.5s; }
 
-font-size:3vw;
-
-opacity:.7;
-
+@keyframes itemIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.user-avatar ion-icon{
-
-font-size:10vw;
-
-opacity:.9;
-
+/* Language */
+.lang-btn {
+  display: flex;
+  justify-content: flex-end;
+  color: white;
 }
 
-
-
-/* Stats */
-
-.stat-grid{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:4vw;
-
-padding:0 4vw;
-
+/* Header */
+.header {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
-.stat-card{
+/* Logo */
+.logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 
-padding:5vw 3vw;
-
-border-radius:16px;
-
-background:rgba(255,255,255,0.08);
-
-border:1px solid rgba(255,255,255,0.2);
-
-backdrop-filter: blur(12px);
-
-text-align:center;
-
-color:white;
-
-transition:.2s;
-
+  animation: logoFloat 3s ease-in-out infinite;
 }
 
-.stat-card:active{
+/* Floating Logo */
+@keyframes  floatUpDown{
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  }
 
-transform:scale(.96);
+  50% {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(37, 99, 235, 0.4);
+  }
 
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  }
+}
+@keyframes logoFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); } /* 🔥 حركة أقوى للأعلى */
+  100% { transform: translateY(0); }
 }
 
-.stat-card ion-icon{
-
-font-size:6vw;
-
-margin-bottom:2vw;
-
+.logo ion-icon {
+  font-size: 40px;
+  color: #fff;
 }
 
-.stat-number{
-
-font-size:5vw;
-
-font-weight:700;
-
+.header h1 {
+  color: #fff;
+  font-size: 28px;
+  margin-top: 1rem;
 }
 
-.stat-title{
-
-font-size:3vw;
-
-opacity:.8;
-
+.header p {
+  color: rgba(255,255,255,0.6);
 }
 
-
-
-/* Attendance */
-
-.attendance-card{
-
-margin:5vw 4vw;
-
-padding:5vw;
-
-border-radius:16px;
-
-background:rgba(255,255,255,0.08);
-
-border:1px solid rgba(255,255,255,0.2);
-
-backdrop-filter: blur(12px);
-
-color:white;
-
+/* Search */
+.search-box {
+  margin-top: 1rem;
+  border-radius: 14px;
+  --background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
 }
 
-.attendance-title{
-
-font-size:4vw;
-
-font-weight:600;
-
-margin-bottom:4vw;
-
+.search-box ion-input {
+  color: white;
 }
 
-.attendance-row{
-
-display:flex;
-
-justify-content:space-between;
-
-text-align:center;
-
+/* Add Button */
+.add-btn {
+  margin-top: 1rem;
+  --background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  --border-radius: 14px;
+  height: 50px;
+  font-weight: bold;
 }
 
-.att-number{
-
-font-size:5vw;
-
-font-weight:700;
-
+/* List */
+.school-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.att-label{
-
-font-size:3vw;
-
-opacity:.8;
-
+/* Card */
+.school-card {height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(12px);
+  transition: 0.3s;
 }
 
-
-
-/* Quick actions */
-
-.quick-actions{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:4vw;
-
-padding:0 4vw;
-
-margin-top:4vw;
-
+.school-card:hover {
+  transform: translateY(-3px);
 }
 
-.quick-action{
-
-text-align:center;
-
-color:white;
-
+/* Left */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.quick-icon{
-
-width:12vw;
-
-height:12vw;
-
-border-radius:14px;
-
-background:rgba(255,255,255,0.1);
-
-border:1px solid rgba(255,255,255,0.2);
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-margin:auto;
-
-backdrop-filter: blur(10px);
-
+/* Icon box */
+.icon-box {
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.quick-icon ion-icon{
-
-font-size:6vw;
-
+.icon-box ion-icon {
+  color: white;
+  font-size: 26px;
 }
 
-.quick-label{
+/* Info */
+.info h2 {
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+}
 
-font-size:3vw;
+.info p {
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+  font-size: 13px;
+}
 
-margin-top:2vw;
+/* Arrow */
+.arrow {
+  color: rgba(255,255,255,0.6);
+}
 
-opacity:.9;
-
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
 }

@@ -19,11 +19,35 @@ export class DashbordComponent implements OnInit {
   error = false;
 
   searchTerm: string = '';
+ 
+
+schools = [
+    { name: 'Oxford School', code: 'OXF123' },
+    { name: 'Al Amal School', code: 'AML456' },
+    { name: 'Future Academy', code: 'FTR789' }
+  ];
+
+
+  // 🔥 هذا هو المهم (كان ناقصك)
+  filteredSchools: any[] = [];
 
 
 
+  filterSchools() {
+    const term = this.searchTerm.toLowerCase();
+
+    this.filteredSchools = this.schools.filter(school =>
+      school.name.toLowerCase().includes(term) ||
+      school.code.toLowerCase().includes(term)
+    );
+  }
+
+
+addSchool() {
+  console.log('Add school clicked');
+}
   ngOnInit() {
-    this.loadMessages();
+    this.loadMessages();    this.filteredSchools = [...this.schools];
   }
  setActiveTab(tab: string, route: string) {
     if (this.activeTab === tab) return; // لا تعيد التنقل لنفس الـ tab

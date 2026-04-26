@@ -1,78 +1,58 @@
-<ion-content class="schools-content" [fullscreen]="true">
+<ion-content class="schools-page" [fullscreen]="true">
 
-  <!-- زر إضافة مدرسة -->
-  <div class="top-icon">
-    <ion-button fill="clear" class="add-btn" (click)="goToAddSchool()">
-      +
-    </ion-button>
-  </div>
+  <div class="container">
 
-  <div class="schools-container">
+    <!-- 🌐 Language -->
 
-    <!-- Header -->
-    <div class="schools-header">
-
-      <div class="logo-wrapper">
-        <div class="logo-circle">
-          <img src="assets/icon/schoolll.PNG" style="width:12vw;height:12vw;" />
-        </div>
+    <!-- 🏫 Header -->
+    <div class="header">
+      <div class="logo">
+        <ion-icon name="school-outline"></ion-icon>
       </div>
 
-      <h1 class="page-title">
-        {{ 'schools.title' | translate }}
-      </h1>
-
-      <p class="page-subtitle">
-        {{ 'schools.selectSchool' | translate }}
-      </p>
-
+      <h1>Schools</h1>
+ 
     </div>
 
-    <!-- Schools List -->
-    <div class="schools-list">
+    <!-- 🔍 Search -->
+    <ion-item lines="none" class="search-box">
+   
+      <ion-input
+        placeholder="Search schools..."
+        [(ngModel)]="searchTerm"
+        (ionInput)="filterSchools()">
+      </ion-input>
+    </ion-item>
 
-      <!-- مدرسة -->
-      <div class="school-card" *ngFor="let school of schools">
+    <!-- ➕ Add Button -->
+    <ion-button expand="block" class="add-btn" (click)="goToAddSchool()">
+     
+      Add School
+    </ion-button>
 
-        <div class="school-icon">
-          <img src="assets/icon/schoolll.PNG">
+    <!-- 🏫 List -->
+    <div class="school-list">
+      <div class="school-card" *ngFor="let school of filteredSchools">
+
+        <div class="left"> 
+          <div class="icon-box">
+            <ion-icon name="school-outline"></ion-icon>
+          </div>
+
+          <div class="info">
+            <h2>{{ school.name }}</h2>
+            <p>{{ school.code }}</p>
+          </div>
         </div>
 
-        <div class="school-info">
-
-          <!-- اسم المدرسة -->
-          <h2>{{ school.name }}</h2>
-
-          <!-- الايميل (إن وجد) -->
-          <p *ngIf="school.email">
-            {{ school.email }}
-          </p>
-
-          <!-- الحالة -->
-          <span
-            class="status"
-            [ngClass]="{
-              'active': school.status === 'ACTIVE',
-              'inactive': school.status !== 'ACTIVE'
-            }"
-          >
-            {{ school.status }}
-          </span>
-
-        </div>
-
-        <!-- سهم -->
-        <div class="school-arrow">
-          <ion-icon name="chevron-forward-outline"></ion-icon>
-        </div>
+        <ion-icon name="chevron-forward-outline" class="arrow"></ion-icon>
 
       </div>
+    </div>
 
-      <!-- حالة عدم وجود مدارس -->
-      <div *ngIf="schools.length === 0" class="no-schools">
-        {{ 'schools.noSchools' | translate }}
-      </div>
-
+    <!-- Footer -->
+    <div class="footer">
+      © 2026 EduTrack 360
     </div>
 
   </div>

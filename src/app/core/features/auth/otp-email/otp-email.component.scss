@@ -2,15 +2,29 @@
   --background: linear-gradient(160deg, #0f172a, #1e3a8a, #2563eb);
 }
 
-/* توسيط المحتوى */
-.otp-container {
+/* دخول الصفحة */
+.otp-container {margin-top: 10%;
   min-height: 100%;
   padding: 60px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   text-align: center;
+
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* الأيقونة */
@@ -20,16 +34,21 @@
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
+
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 25px;
+
   border: 1px solid rgba(255, 255, 255, 0.2);
+
+  animation: pulse 2.5s infinite ease-in-out;
 }
 
-.icon-circle ion-icon {
-  font-size: 40px;
-  color: #fff;
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
 }
 
 /* العنوان */
@@ -38,15 +57,18 @@
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 8px;
+
+  animation: fadeIn 1s ease;
 }
 
-/* الوصف */
 .subtitle {
   font-size: 14px;
   color: #e2e8f0;
   margin-bottom: 35px;
   max-width: 280px;
   line-height: 1.6;
+
+  animation: fadeIn 1.2s ease;
 }
 
 /* OTP Inputs */
@@ -59,15 +81,36 @@
 .otp-inputs ion-input {
   width: 50px;
   height: 50px;
-  text-align: center;
+  text-align: center;justify-content: center;
   font-size: 20px;
   color: white;
+
   --background: rgba(255, 255, 255, 0.12);
   --border-radius: 12px;
+
   backdrop-filter: blur(8px);
+
+  transition: all 0.25s ease;
 }
 
-/* Resend link */
+/* حركة عند التركيز */
+.otp-inputs ion-input:focus-within {
+  transform: scale(1.15);
+  border: 1px solid #60a5fa;
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.6);
+}
+
+/* تأثير عند الإدخال */
+.otp-inputs ion-input.filled {
+  animation: pop 0.2s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); }
+  100% { transform: scale(1); }
+}
+
+/* Resend */
 .resend {
   font-size: 14px;
   color: #e2e8f0;
@@ -78,32 +121,54 @@
   color: #3b82f6;
   cursor: pointer;
   text-decoration: underline;
+  transition: 0.2s;
 }
 
-/* زر الإرسال */
+.resend .email-link:hover {
+  opacity: 0.7;
+}
+
+/* زر */
 .submit-btn {
   --background: linear-gradient(135deg, #3b82f6, #1d4ed8);
   height: 54px;
   font-weight: 600;
   font-size: 15px;
   margin-top: 10px;
-  transition: 0.3s ease;
+
+  transition: all 0.25s ease;
 }
 
 .submit-btn:hover {
   transform: translateY(-2px);
 }
 
-/* زر العودة */
+.submit-btn:active {
+  transform: scale(0.96);
+}
+
+/* Back */
 .back-btn {
   margin-top: 20px;
   color: #ffffff;
   font-size: 14px;
+
+  transition: 0.2s;
 }
 
-/* الفوتر */
+.back-btn:hover {
+  opacity: 0.7;
+}
+
+/* Footer */
 .footer {
   margin-top: 40px;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.7);
+}
+
+/* fade helper */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

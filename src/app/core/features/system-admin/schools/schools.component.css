@@ -1,144 +1,161 @@
-.schools-content{
-  --background: linear-gradient(
-    180deg,
-    #242c37 0%,
-    #2a64b1 50%,
-    #242c37 100%
-  );
+/* Page */
+.schools-page {
+  --background: linear-gradient(180deg, #0f172a, #1e3a8a 50%, #0f172a);
 }
 
-.schools-container{
-  padding: 2rem 1.5rem;
+/* Container */
+.container {
+  padding: 1.5rem;
   max-width: 420px;
   margin: auto;
 }
 
+/* Language */
+.lang-btn {
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+}
 
-/* header */
-
-.schools-header{
+/* Header */
+.header {
   text-align: center;
+  margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
-.logo-wrapper{
-  display:flex;
-  justify-content:center;
-  margin-bottom:1rem;
-}
-
-.logo-circle{
-  width:20vw;
-  height:20vw;
-  max-width:80px;
-  max-height:80px;
-
-  border-radius:50%;
-
-  background:rgba(255,255,255,0.08);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  backdrop-filter:blur(10px);
-
-  box-shadow:0 8px 32px rgba(37,99,235,0.3);
-}
-
-.page-title{
-  font-size:5vw;
-  font-weight:700;
-  color:white;
-}
-
-.page-subtitle{
-  font-size:3.5vw;
-  color:rgba(255,255,255,0.7);
-}
-
-
-/* schools */
-
-.schools-list{
-  display:flex;
-  flex-direction:column;
-  gap:1rem;
-}
-
-.school-card{
-
-  display:flex;
-  align-items:center;
-
-  background:rgba(255,255,255,0.08);
-
-  border-radius:14px;
-
-  padding:14px;
-
-  border:1px solid rgba(255,255,255,0.15);
-
-  backdrop-filter:blur(10px);
-
-  transition:.3s;
-}
-
-.school-card:active{
-  transform:scale(.97);
-}
-
-.school-icon img{
-  width:8vw;
-  height:8vw;
-  margin-inline-end:10px;
-}
-.add-btn {margin-top: 5%;
-  font-size: 5vw;   /* تكبير علامة + */
-  color: white;      /* جعل اللون أبيض */
-}
-.school-info{
-  flex:1;
-}
-
-.school-info h2{
-  font-size:3.8vw;
-  color:white;
-  margin:0;
-}
-
-.school-info p{
-  font-size:3.2vw;
-  color:rgba(255,255,255,0.6);
-  margin:0;
-}
-.header-actions{
-  display:flex;
-  justify-content:flex-end;
-}
-
-.header-actions ion-button{
-  --color:white;
-  font-size:22px;
-}
-.status{
-  font-size:3vw;
-  margin-top:3px;
-}
-
-.status.active{
-  color:#22c55e;
-}
-
-.school-arrow ion-icon{
-  font-size:20px;
-  color:white;
-}.top-icon{
+/* Logo (الحركة الوحيدة) */
+.logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+
+  animation: logoFloat 3s ease-in-out infinite;
 }
 
-.top-icon img{
-  width: 40px;
+/* حركة اللوجو */
+@keyframes logoFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.logo ion-icon {
+  font-size: 40px;
+  color: #fff;
+}
+
+/* Text */
+.header h1 {
+  color: #fff;
+  font-size: 28px;
+  margin-top: 1rem;
+}
+
+.header p {
+  color: rgba(255,255,255,0.6);
+}
+
+/* Search */
+.search-box {
+  margin-top: 1rem;
+  border-radius: 14px;
+  --background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+}
+
+.search-box ion-input {
+  color: white;
+}
+
+/* Add Button */
+.add-btn {
+  margin-top: 1rem;
+  --background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  --border-radius: 14px;
+  height: 50px;
+  font-weight: bold;
+}
+
+/* List */
+.school-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Card */
+.school-card {
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(12px);
+  transition: 0.3s;
+}
+
+.school-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Left */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Icon box */
+.icon-box {
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box ion-icon {
+  color: white;
+  font-size: 26px;
+}
+
+/* Info */
+.info h2 {
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+}
+
+.info p {
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+  font-size: 13px;
+}
+
+/* Arrow */
+.arrow {
+  color: rgba(255,255,255,0.6);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
 }

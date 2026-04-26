@@ -1,8 +1,9 @@
 .login-content {
   margin-top: 0;
---background: linear-gradient(180deg, #242c37 0%, #2a64b1 50%, #242c37 100%);
+  --background: linear-gradient(180deg, #242c37 0%, #2a64b1 50%, #242c37 100%);
 }
 
+/* دخول الصفحة */
 .login-container {
   margin-top: 0;
   display: flex;
@@ -13,14 +14,31 @@
   padding: 2rem 1.5rem;
   max-width: 400px;
   margin-inline: auto;
-}.custom-class {width: 5vw;
+
+  animation: fadeSlideIn 0.9s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-class {
+  width: 5vw;
   height: 5vw;
   margin-inline-end: 2%;
 }
+
 /* =======================
    Language Button
 ======================= */
-
 .lang-toggle {
   display: flex;
   justify-content: flex-end;
@@ -36,20 +54,21 @@
 /* =======================
    Header
 ======================= */
-
 .login-header {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.login-header .logo-wrapper {
+.logo-wrapper {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
 }
 
-.login-header .logo-circle {  border: 1px solid rgba(255, 255, 255, 0.2);
- box-shadow: 0 8px 32px rgba(37, 99, 235, 0.3);
+/* 🔥 اللوجو (أسرع شوي من السابق) */
+.logo-circle {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.3);
   width: 20vw;
   height: 20vw;
   max-width: 80px;
@@ -57,22 +76,42 @@
   min-width: 60px;
   min-height: 60px;
   border-radius: 50%;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   backdrop-filter: blur(10px);
+
+  margin-top: -15px;
+  animation: floatUpDown 2.2s ease-in-out infinite;
 }
 
-.login-header .app-title {
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  }
+
+  50% {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(37, 99, 235, 0.4);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  }
+}
+
+.app-title {
   font-size: 5vw;
   font-weight: 700;
   color: #ffffff;
   margin: 0 0 3vw;
 }
 
-.login-header .app-subtitle {
+.app-subtitle {
   font-size: 3.5vw;
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
@@ -81,9 +120,23 @@
 /* =======================
    Form
 ======================= */
-
-.login-form .form-group {
+.form-group {
   margin-bottom: 1rem;
+
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUpSoft 1.4s ease-out forwards;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.2s; }
+.form-group:nth-child(2) { animation-delay: 0.4s; }
+.form-group:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeUpSoft {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .login-form ion-item {
@@ -96,7 +149,7 @@
   font-size: 3.5vw;
 }
 
-.login-form .input-item {
+.input-item {
   --background: rgba(255, 255, 255, 0.08);
   --border-radius: 12px;
   --min-height: 52px;
@@ -110,25 +163,26 @@
   transition: all 0.3s ease;
 }
 
-.login-form .input-item:focus-within {
-  border: 1px solid #60a5fa;
-  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+.input-item:hover {
+  transform: translateY(-1px);
 }
 
-.login-form .error-text {
-  font-size: 12px;
-  color: #eb445a;
-  padding: 4px 16px 0;
-  min-height: 20px;
+.input-item:focus-within {
+  border: 1px solid #60a5fa;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+  transform: scale(1.01);
 }
 
 /* =======================
    Forgot Password
 ======================= */
-
 .forgot-password {
   text-align: right;
   margin-bottom: 1rem;
+}
+
+[dir="rtl"] .forgot-password {
+  text-align: left;
 }
 
 .forgot-password ion-button {
@@ -137,14 +191,9 @@
   font-weight: 500;
 }
 
-[dir="rtl"] .forgot-password {
-  text-align: left;
-}
-
 /* =======================
-   Login Button
+   Button
 ======================= */
-
 .login-btn {
   --background: linear-gradient(135deg, #2563EB, #1D4ED8);
   --border-radius: 12px;
@@ -155,13 +204,26 @@
   font-weight: 600;
   margin-top: 0.5rem;
   text-transform: none;
-  letter-spacing: 0.3px;
+
+  transition: all 0.2s ease;
 }
 
-/* =======================
-   Footer
-======================= */
+.login-btn:hover {
+  filter: brightness(1.05);
+}
 
+.login-btn:active {
+  transform: scale(0.97);
+}
+
+/* Spinner */
+ion-spinner {
+  width: 20px;
+  height: 20px;
+  margin-inline-end: 8px;
+}
+
+/* Footer */
 .login-footer {
   text-align: center;
   margin-top: 2rem;
@@ -170,5 +232,4 @@
 .login-footer p {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.4);
-  margin: 0;
 }

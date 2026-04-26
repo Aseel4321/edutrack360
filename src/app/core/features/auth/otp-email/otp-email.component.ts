@@ -56,9 +56,7 @@ private lockInProgress = false;
 
       // تحديث CSS يدويًا لو أردت
       const img = document.querySelector('.login-image2') as HTMLElement;
-      if (img) {
-        img.style.cssText = this.style_image2();
-      }
+     
     });
   }); this.keyboardWillShowListener = Keyboard.addListener('keyboardWillShow', () => {
       this.isKeyboardOpen = true; // السماح بالتمرير
@@ -123,24 +121,5 @@ goBack() {
 
   
 }
-title() {
-  if (localStorage.getItem('lang') === 'ar') {
-    return { 'font-family': '"El Messiri", sans-serif' };
-  } else {
-    return { 'font-family': '"Lucida Console", Monaco, monospace' };
-  } 
-}style_image2() {
-  if (this.keyboardOpen) {
-    return 'display: none;';
-  }
 
-  const baseStyle = 'width: 100%; position: fixed; bottom: 0; z-index: 10;';
-  const lang = localStorage.getItem('lang');
-
-  if (lang === 'ar') {
-    return baseStyle + ' right: 0;';
-  } else {
-    return baseStyle + ' left: 0;';
-  }
-}
 }
