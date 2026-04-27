@@ -1,0 +1,81 @@
+<ion-content class="school-details">
+
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header"> 
+      <h1>School Details</h1>
+
+  <div class="actions">
+
+  <!-- Edit -->
+  <ion-button fill="clear" (click)="toggleEdit()">
+    تعديل
+  </ion-button>
+
+  <!-- Delete -->
+  <ion-button fill="clear" color="danger" (click)="deleteSchool()">
+    حذف
+  </ion-button>
+
+</div>
+    </div>
+
+    <!-- Form -->
+    <form [formGroup]="form">
+
+      <!-- Name -->
+      <div class="row">
+        <label>School Name</label>
+
+        <span *ngIf="!isEdit">{{ form.value.name }}</span>
+
+        <ion-input *ngIf="isEdit" formControlName="name"></ion-input>
+      </div>
+
+      <!-- Address -->
+      <div class="row">
+        <label>Address</label>
+
+        <span *ngIf="!isEdit">{{ form.value.address }}</span>
+
+        <ion-input *ngIf="isEdit" formControlName="address"></ion-input>
+      </div>
+
+      <!-- Phone -->
+      <div class="row">
+        <label>Phone</label>
+
+        <span *ngIf="!isEdit">{{ form.value.phone }}</span>
+
+        <ion-input *ngIf="isEdit" formControlName="phone"></ion-input>
+      </div>
+<div class="row">
+  <label>School ID</label>
+
+  <span>3/4/1000</span>
+</div>
+    </form>
+
+    <!-- Buttons -->
+    <div *ngIf="isEdit" class="edit-actions">
+
+      <ion-button expand="block" (click)="save()">
+        Save
+      </ion-button>
+
+      <ion-button expand="block" fill="outline" color="medium" (click)="cancelEdit()">
+        Cancel
+      </ion-button>
+
+    </div>
+<ion-button *ngIf="!isEdit"
+            expand="block"
+            fill="outline"
+            class="back-btn"
+            routerLink="/system-admin/schools">
+  رجوع
+</ion-button>
+  </div>
+
+</ion-content>

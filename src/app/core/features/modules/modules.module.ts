@@ -36,6 +36,7 @@ import { MessagesComponent } from '../Principal/messages/messages.component';
 import { StudentsComponent } from '../Principal/students/students.component';
 import { MessageComponent } from '../Principal/message/message.component';
 import { AddStudentsComponent } from '../Principal/add-students/add-students.component';
+import { DetailsComponent } from '../system-admin/details/details.component';
 
 @NgModule({
   declarations: [DashbordComponent,MessagesComponent,StudentsComponent,
@@ -50,7 +51,7 @@ import { AddStudentsComponent } from '../Principal/add-students/add-students.com
     MoreComponent,
     SchoolsComponent,
     AddSchoolComponent,
-    PrincipalComponent,MessageComponent,AddStudentsComponent
+    PrincipalComponent,MessageComponent,AddStudentsComponent,DetailsComponent
   ],
 
   imports: [
