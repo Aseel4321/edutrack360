@@ -2,8 +2,6 @@
 
   <div class="container">
 
-    <!-- 🌐 Language -->
-
     <!-- 🏫 Header -->
     <div class="header">
       <div class="logo">
@@ -11,24 +9,16 @@
       </div>
 
       <h1>Schools</h1>
- 
     </div>
 
     <!-- 🔍 Search -->
     <ion-item lines="none" class="search-box">
-   
       <ion-input
         placeholder="Search schools..."
         [(ngModel)]="searchTerm"
         (ionInput)="filterSchools()">
       </ion-input>
     </ion-item>
-
-    <!-- ➕ Add Button -->
-    <ion-button expand="block" class="add-btn" (click)="goToAddSchool()">
-     
-      Add School
-    </ion-button>
 
     <!-- 🏫 List -->
     <div class="school-list">
@@ -51,10 +41,15 @@
     </div>
 
     <!-- Footer -->
-    <div class="footer">
-      © 2026 EduTrack 360
-    </div>
+    
 
   </div>
+
+  <!-- ➕ Floating Add Button -->
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="goToAddSchool()" class="fab-btn">
+     +
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

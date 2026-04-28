@@ -87,7 +87,42 @@ color: rgba(255,255,255,0.7);
   margin-bottom: 10px;
 }
 /* Form */
+/* حركة دخول + نبض خفيف */
+/* حركة جديدة مختلفة */
+/* حركة تموّج ناعمة */
+.avatar-circle {
+  animation: waveMove 6s ease-in-out infinite;
+}
 
+/* تموّج جانبي + بسيط */
+@keyframes waveMove {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+
+  25% {
+    transform: translateX(2px) translateY(-2px);
+  }
+
+  50% {
+    transform: translateX(0) translateY(2px);
+  }
+
+  75% {
+    transform: translateX(-2px) translateY(-1px);
+  }
+
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* حركة عائمة */
+@keyframes avatarFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
 .profile-form .form-group {
 margin-bottom: 1rem;
 }

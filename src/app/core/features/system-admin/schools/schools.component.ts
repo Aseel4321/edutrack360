@@ -22,7 +22,8 @@ export class SchoolsComponent implements OnInit {
 schools = [
     { name: 'Oxford School', code: 'OXF123' },
     { name: 'Al Amal School', code: 'AML456' },
-    { name: 'Future Academy', code: 'FTR789' }
+    { name: 'Future Academy', code: 'FTR789' },  
+    { name: 'Future Academy', code: 'FTR789' },  { name: 'Future Academy', code: 'FTR789' }
   ];
 
 

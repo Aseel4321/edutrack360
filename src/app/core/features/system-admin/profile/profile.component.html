@@ -61,21 +61,18 @@
         </ion-item>
       </div>
 
-
+     <div class="form-group">
+        <ion-item lines="none" class="input-item">
+      
+          <ion-input
+            [(ngModel)]="profile.phone"
+            [readonly]="!isEdit"
+           [placeholder]="'profile.phone' | translate">
+          </ion-input>
+        </ion-item>
+      </div>
       <!-- Member Since -->
-   <div class="form-group">
-  <ion-item lines="none" class="input-item">
 
- 
-
-   <ion-datetime
-  presentation="date"
-  [(ngModel)]="profile.memberSince"
-  name="memberSince">
-</ion-datetime>
-
-  </ion-item>
-</div>
       <!-- Buttons -->
 
       <ion-button
@@ -89,17 +86,7 @@
 
       </ion-button>
 
-<ion-button
-  expand="block"
-  shape="round"
-  class="profile-btn"
-  *ngIf="isEdit"
-  (click)="saveProfile()"
-  [disabled]="!hasChanges()">
 
-  {{ 'common.save' | translate }}
-
-</ion-button>
 
     </form>
 
