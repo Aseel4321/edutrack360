@@ -18,6 +18,7 @@ import { StudentsComponent } from '../Principal/students/students.component';
 import { MessageComponent } from '../Principal/message/message.component';
 import { AddStudentsComponent } from '../Principal/add-students/add-students.component';
 import { DetailsComponent } from '../system-admin/details/details.component';
+import { ChangePasswordComponent } from '../auth/change-password/change-password.component';
 
 const routes: Routes = [
   { path:'login', component:LoginComponent },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path:'', component:SplashScreenComponent },
   { path:'otp', component:OtpEmailComponent },
   { path:'add-schools', component:AddSchoolComponent },
-  { path:'rest-password', component:RestPasswordComponent },
+  { path:'rest-password', component:RestPasswordComponent }, 
+  { path:'change-password', component:ChangePasswordComponent },
   { path:'profile', component:ProfileComponent },
   { path:'admin', component:AdminComponent },
  { path:'details', component:DetailsComponent },

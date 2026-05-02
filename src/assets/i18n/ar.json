@@ -55,16 +55,22 @@
   "save": "حفظ التغييرات"
 },
   "schools": {
-    "title": "المدارس",
-    "selectSchool": "اختر مدرستك",
-    "addSchool": "إضافة مدرسة",
-    "noSchools": "لا توجد مدارس",
-    "status": {
-      "ACTIVE": "نشطة",
-      "INACTIVE": "غير نشطة",
-      "SUSPENDED": "موقوفة"
-    }
-  },
+  "title": "المدارس",
+  "search": "ابحث عن مدرسة...",
+  "selectSchool": "اختر مدرستك",
+  "addSchool": "إضافة مدرسة",
+  "noSchools": "لا توجد مدارس",
+  "noResults": "لا توجد نتائج مطابقة للبحث",
+  "loading": "جارٍ تحميل المدارس...",
+  "emptyStateTitle": "لا توجد مدارس",
+  "emptyStateDesc": "حاول البحث باسم مختلف",
+
+  "status": {
+    "ACTIVE": "نشطة",
+    "INACTIVE": "غير نشطة",
+    "SUSPENDED": "موقوفة"
+  }
+},
 
   
 "roles": { "SYSTEM_ADMIN": "مدير النظام", "TEACHER": "معلم", "PARENT": "ولي أمر", "STUDENT": "طالب" },

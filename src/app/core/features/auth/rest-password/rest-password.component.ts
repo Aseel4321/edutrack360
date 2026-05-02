@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -22,31 +22,17 @@ export class RestPasswordComponent implements OnInit {
     this.resetForm = this.fb.group({
       newPassword: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required]
-    });
-
-    // تحقق مباشر أثناء الكتابة
-    this.resetForm.valueChanges.subscribe(() => {
-      this.checkPasswords();
-    });
-
+    }, { validators: this.passwordMatchValidator });
   }
 
-  checkPasswords() {
+  passwordMatchValidator(group: AbstractControl): ValidationErrors | null {
 
-    const password = this.resetForm.get('newPassword')?.value;
-    const confirm = this.resetForm.get('confirmPassword')?.value;
+    const pass = group.get('newPassword')?.value;
+    const confirm = group.get('confirmPassword')?.value;
 
-    if (!confirm) {
-      this.resetForm.get('confirmPassword')?.setErrors(null);
-      return;
-    }
+    if (!pass || !confirm) return null;
 
-    if (password !== confirm) {
-      this.resetForm.get('confirmPassword')?.setErrors({ mismatch: true });
-    } else {
-      this.resetForm.get('confirmPassword')?.setErrors(null);
-    }
-
+    return pass === confirm ? null : { mismatch: true };
   }
 
   submit() {
@@ -55,20 +41,14 @@ export class RestPasswordComponent implements OnInit {
 
     this.isLoading = true;
 
-    const data = {
-      newPassword: this.resetForm.value.newPassword
-    };
-
     setTimeout(() => {
 
       this.isLoading = false;
 
-      console.log('Password Updated', data);
+      console.log('Password Reset Done');
 
       this.router.navigate(['/login']);
 
-    },1500);
-
+    }, 1500);
   }
-
 }

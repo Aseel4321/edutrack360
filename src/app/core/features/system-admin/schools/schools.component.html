@@ -8,13 +8,13 @@
         <ion-icon name="school-outline"></ion-icon>
       </div>
 
-      <h1>Schools</h1>
+      <h1>{{ 'schools.title' | translate }}</h1>
     </div>
 
     <!-- 🔍 Search -->
     <ion-item lines="none" class="search-box">
       <ion-input
-        placeholder="Search schools..."
+        [placeholder]="'messages.search' | translate"
         [(ngModel)]="searchTerm"
         (ionInput)="filterSchools()">
       </ion-input>
@@ -22,9 +22,10 @@
 
     <!-- 🏫 List -->
     <div class="school-list">
+
       <div class="school-card" *ngFor="let school of filteredSchools">
 
-        <div class="left"> 
+        <div class="left">
           <div class="icon-box">
             <ion-icon name="school-outline"></ion-icon>
           </div>
@@ -38,17 +39,20 @@
         <ion-icon name="chevron-forward-outline" class="arrow"></ion-icon>
 
       </div>
-    </div>
 
-    <!-- Footer -->
-    
+      <!-- Empty state -->
+      <div *ngIf="filteredSchools.length === 0">
+        {{ 'schools.noSchools' | translate }}
+      </div>
+
+    </div>
 
   </div>
 
-  <!-- ➕ Floating Add Button -->
+  <!-- ➕ Floating Button -->
   <ion-fab vertical="top" horizontal="end" slot="fixed">
     <ion-fab-button (click)="goToAddSchool()" class="fab-btn">
-     +
+      {{ 'schools.addSchool' | translate }}
     </ion-fab-button>
   </ion-fab>
 

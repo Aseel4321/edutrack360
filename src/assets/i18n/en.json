@@ -17,18 +17,23 @@
   "failed": "Failed to load messages",
   "retry": "Retry"
 },
-  "school": {
-    "addSchool": "Add School",
-    "createSchool": "Create School",
-    "schoolInformation": "School Information",
-    "schoolName": "School Name",
-    "subdomain": "Subdomain",
-    "schoolEmail": "School Email",
-    "phone": "Phone",
-    "address": "Address",
-    "principalAccount": "Principal Account",
-    "principalEmail": "Principal Email"
-  },
+  "schools": {
+  "title": "Schools",
+  "search": "Search schools...",
+  "selectSchool": "Select your school",
+  "addSchool": "Add School",
+  "noSchools": "No schools found",
+  "noResults": "No matching schools found",
+  "loading": "Loading schools...",
+  "emptyStateTitle": "No Schools",
+  "emptyStateDesc": "Try searching with a different name",
+
+  "status": {
+    "ACTIVE": "Active",
+    "INACTIVE": "Inactive",
+    "SUSPENDED": "Suspended"
+  }
+},
 
   "users": {
     "firstName": "First Name",
@@ -44,18 +49,7 @@
     "forgotPassword": "Forgot Password?",
     "logout": "Logout"
   },
-
-  "schools": {
-    "title": "Schools",
-    "selectSchool": "Select your school",
-    "addSchool": "Add School",
-    "noSchools": "No schools found",
-    "status": {
-      "ACTIVE": "Active",
-      "INACTIVE": "Inactive",
-      "SUSPENDED": "Suspended"
-    }
-  },"profile": {"language": "Language",
+"profile": {"language": "Language",
   "title": "Profile",
   "editProfile": "Edit Profile",
   "username": "Username",

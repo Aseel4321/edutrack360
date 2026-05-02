@@ -37,6 +37,7 @@ import { StudentsComponent } from '../Principal/students/students.component';
 import { MessageComponent } from '../Principal/message/message.component';
 import { AddStudentsComponent } from '../Principal/add-students/add-students.component';
 import { DetailsComponent } from '../system-admin/details/details.component';
+import { ChangePasswordComponent } from '../auth/change-password/change-password.component';
 
 @NgModule({
   declarations: [DashbordComponent,MessagesComponent,StudentsComponent,
@@ -51,7 +52,7 @@ import { DetailsComponent } from '../system-admin/details/details.component';
     MoreComponent,
     SchoolsComponent,
     AddSchoolComponent,
-    PrincipalComponent,MessageComponent,AddStudentsComponent,DetailsComponent
+    PrincipalComponent,MessageComponent,AddStudentsComponent,DetailsComponent,ChangePasswordComponent
   ],
 
   imports: [
