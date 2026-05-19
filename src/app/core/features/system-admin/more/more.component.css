@@ -1,15 +1,15 @@
 .login-bg {
-  --background: linear-gradient(180deg, #181b1f 0%, #2a64b1 50%, #242c37 100%);
+ --background: linear-gradient(180deg, #0f172a, #1e3a8a 50%, #0f172a);
 }
 
 .container {
-  padding: 20px;
+  padding: 5%;
 }
 
 .title {
   color: white;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 5%;
 }
 .logo-wrapper{
   display:flex;
@@ -42,15 +42,15 @@
 }
 
 .menu-card {
-  margin-top: 15px;
+  margin-top: 5%;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 10vw;
+  height: 10vw;
   background: #2b6ef3;
   color: white;
   display: flex;
@@ -67,6 +67,6 @@
 .version {
   text-align: center;
   color: white;
-  margin-top: 25px;
-  font-size: 13px;
+  margin-top: 10%;
+  font-size: 3vw;
 }

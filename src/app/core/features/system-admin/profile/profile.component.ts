@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -8,7 +9,7 @@ import { NavController } from '@ionic/angular';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController,private router: Router) {}
 
   isEdit = false;
 
@@ -26,7 +27,7 @@ export class ProfileComponent implements OnInit {
   }
 
   enableEdit(){
-    this.isEdit = true;
+    this.router.navigate(['/change-password'])
   }
 
   // التحقق إذا حدث تعديل

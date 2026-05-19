@@ -1,10 +1,5 @@
 .add-school-content{
-  --background: linear-gradient(
-    180deg,
-    #242c37 0%,
-    #2a64b1 50%,
-    #242c37 100%
-  );
+ --background: linear-gradient(180deg, #0f172a, #1e3a8a 50%, #0f172a);
 }
 
 /* ================= Container Animation ================= */
@@ -165,13 +160,32 @@ ion-input{
 .create-btn{
   --background:linear-gradient(135deg,#2563EB,#1D4ED8);
 
-  height:52px;
+  height:20vh;
   font-weight:600;
   margin-top:1rem;
 
   transition:0.2s;
 }
+.login-btn {
+  width: 95%;
+  margin: 10% auto;
 
+  display: block;
+
+  height: 5vh;
+
+  --border-radius: 16px;
+  --background: linear-gradient(135deg, #181488, #27276d);
+
+  font-weight: 600;
+  font-size: 4vw;
+
+  transition: 0.3s ease;
+}
+.login-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
 .create-btn:active{
   transform:scale(0.97);
 }

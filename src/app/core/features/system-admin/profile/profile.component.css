@@ -1,5 +1,5 @@
 .profile-content {
---background: linear-gradient(180deg, #242c37 0%, #2a64b1 50%, #242c37 100%);
+--background: linear-gradient(180deg, #0f172a, #1e3a8a 50%, #0f172a);
 }
 
 .profile-container {
@@ -152,10 +152,16 @@ ion-input {
   color:white;
 }
 .profile-btn {
---background: linear-gradient(135deg,#2563EB,#1D4ED8);
---border-radius: 12px;
-height: 52px;
-font-size: 16px;
-font-weight: 600;
-margin-top: 1rem;
+  margin-top: 10%;
+  height: 6vh;
+
+  --border-radius: 16px;
+  --background: linear-gradient(135deg, #181488, #27276d);
+  --box-shadow: 0 6px 18px rgba(68, 104, 184, 0.3);
+
+  font-size: 1.1rem;  /* بدل 1vw */
+  font-weight: 500;
+  letter-spacing: 0.5px;
+
+  text-transform: none;
 }

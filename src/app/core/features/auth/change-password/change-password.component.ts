@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-change-password',
@@ -11,7 +12,7 @@ export class ChangePasswordComponent implements OnInit {
   resetForm!: FormGroup;
   isLoading = false;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private navCtrl: NavController) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -35,7 +36,9 @@ export class ChangePasswordComponent implements OnInit {
       ? null
       : { mismatch: true };
   }
-
+  goBack() {
+    this.navCtrl.back();
+  }
   submit() {
     if (this.resetForm.invalid) {
       this.resetForm.markAllAsTouched();
