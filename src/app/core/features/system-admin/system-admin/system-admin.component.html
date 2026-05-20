@@ -1,18 +1,20 @@
-<ion-content>
+<ion-content [fullscreen]="true">
 
-  <ion-router-outlet [animated]="true"
-  ></ion-router-outlet>
+  <ion-router-outlet [animated]="true"></ion-router-outlet>
 
 </ion-content>
 
-<div class="custom-tabs">
+<div class="custom-tabs" *ngIf="!keyboardOpen">
 
   <div class="tab-btn"
        (click)="setActiveTab('schools','/system-admin/schools')"
        [ngClass]="{ 'active-tab': activeTab === 'schools' }">
 
-      <ion-icon name="school-outline"></ion-icon>
-      <span>{{ 'tabs.schools' | translate }}</span>
+    <ion-icon name="school-outline"></ion-icon>
+
+    <span>
+      {{ 'tabs.schools' | translate }}
+    </span>
 
   </div>
 
@@ -20,8 +22,11 @@
        (click)="setActiveTab('more','/system-admin/more')"
        [ngClass]="{ 'active-tab': activeTab === 'more' }">
 
-      <ion-icon name="settings-outline"></ion-icon>
-      <span>{{ 'tabs.more' | translate }}</span>
+    <ion-icon name="settings-outline"></ion-icon>
+
+    <span>
+      {{ 'tabs.more' | translate }}
+    </span>
 
   </div>
 

@@ -72,7 +72,7 @@ export class LoginComponent implements OnInit {
   }
 
 submit() {
-
+this.router.navigate(['/system-admin/schools']);
   if (this.loginForm.invalid) {
     this.showToast('Please enter username and password');
     return;
@@ -110,7 +110,7 @@ submit() {
 
         // ✅ توجيه
         if (data.user?.role === "SYSTEM_ADMIN") {
-          this.router.navigate(['/system-admin/schools']);
+          
         }
 
         this.showToast('Login successful', 'success');

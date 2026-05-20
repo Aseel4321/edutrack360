@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServicesService } from '../../services/services.service';
-
+import { Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-schools',
   templateUrl: './schools.component.html',
@@ -23,7 +23,8 @@ schools = [
     { name: 'Oxford School', code: 'OXF123' },
     { name: 'Al Amal School', code: 'AML456' },
     { name: 'Future Academy', code: 'FTR789' },  
-    { name: 'Future Academy', code: 'FTR789' },  { name: 'Future Academy', code: 'FTR789' }
+    { name: 'Future Academy', code: 'FTR789' }, 
+     { name: 'Future Academy', code: 'FTR789' }
   ];
 
 
